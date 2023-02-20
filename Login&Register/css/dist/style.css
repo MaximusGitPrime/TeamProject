@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --container: 120rem;
+  --primary: hsl(0, 70%, 52%);
+  --white: #e9eaec27;
+  --white-light: #e9eaec27;
+  --box-shadow: hsl(220, 7.32%, 91.96%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Rubik", sans-serif;
+  background: var(--box-shadow);
+}
+
+#particles-js {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.swtch-tabs {
+  max-width: var(--container);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+.section-heading {
+  margin: 3rem 0;
+  font-size: 4rem;
+  padding-bottom: 0.7rem;
+  position: relative;
+}
+
+.login-form {
+  margin-top: -18rem;
+}
+
+.tab-info {
+  width: 70%;
+  margin: 0 auto 3rem auto;
+  box-shadow: 0 0.8rem 1rem var(--box-shadow);
+}
+
+@media (max-width: 767px) {
+  .tab-info {
+    width: 90%;
+  }
+}
+.tab-filter-info {
+  padding: 2rem;
+  text-align: center;
+  background: #e9eaec27;
+}
+
+.filter-btn {
+  display: inline-flex;
+  padding: 0.8rem 2.5rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.tab-filter-item-box {
+  background: var(--white);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0rem 3rem;
+  transform: translateY(100%);
+  background: var(--white-light);
+  transition: transform 0.5s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  place-items: center start;
+}
+
+.tab-img {
+  width: 30rem;
+}
+
+.tab-heading {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+
+.tab-item.select_tab {
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+  background: var(--white-light);
+  animation: feadIn 0.6s ease-in-out;
+}
+
+.usrname-input {
+  padding: 8px;
+  background: #e9eaec27;
+  border: 2px solid #7e7e7e41;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s;
+  color: black;
+}
+
+.usrname-input:focus {
+  border: 2px solid rgba(223, 19, 19, 0.356);
+}
+
+.pswrd-input:focus {
+  border: 2px solid rgba(223, 19, 19, 0.356);
+}
+
+.pswrd-input {
+  padding: 8px;
+  background: #e9eaec27;
+  border: 2px solid #7e7e7e41;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s;
+  color: black;
+}
+
+.usrname-input::placeholder {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.usrname-input:focus::placeholder {
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.pswrd-input::placeholder {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.pswrd-input:focus::placeholder {
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.usrname-label {
+  position: absolute;
+  padding: 8px;
+  pointer-events: none;
+  color: #00000062;
+  transition: all 0.2s;
+}
+
+.pswrd-label {
+  position: absolute;
+  padding: 8px;
+  pointer-events: none;
+  color: #00000062;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background: var(--primary);
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+  color: white;
+}
+
+@keyframes feadIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+footer {
+  flex-shrink: 0;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  background: #240000;
+  background: linear-gradient(90deg, rgba(90, 2, 2, 0.562) 97%, rgba(90, 2, 2, 0.562) 97%);
+  border-top: 1px solid #eb161679;
+  font-size: 17px;
+  padding: 15px 5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
