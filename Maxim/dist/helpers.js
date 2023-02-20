@@ -1,6 +1,13 @@
 function randomNumber() {
-    var number = Math.floor(Math.random() * (51 - 0) + 0);
+    var number = Math.floor(Math.random() * (30 - 0) + 0);
     console.log(number);
     return number;
 }
-randomNumber();
+//alert message with delay//////////
+function timeMsg() {
+    var t = setTimeout("alertMsg()", 300);
+}
+function alertMsg() {
+    alert("No More Coins");
+}
+///////////////////////////////

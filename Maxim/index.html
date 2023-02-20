@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/helpers.js"></script>
+    <script src="./dist/helpers.js" defer></script>
+    <script src="./dist/model.js" defer></script>
+    <script src="./dist/control.js" defer></script>
     <link rel="stylesheet" href="./dist/main.css">
     <title>Document</title>
+    <h1>Welcome #name</h1>
+    <div class="headerBtn">
+        <h2 class="counter">counter</h2>
+        <div onclick="showCards()" class="packBtn">Packs</div>
+        <div onclick="window.location.href = './album.html'" class="albumBtn">Album</div>
+    </div>
+    <div class="packContainer">
+
+    </div>
+    <div class="cardContainer">
+
+    </div>
     
 </head>
 <body>

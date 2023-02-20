@@ -4,6 +4,34 @@
 }
 
 body {
-  background: linear-gradient(red, transparent), linear-gradient(to top left, lime, transparent), linear-gradient(to top right, blue, transparent);
-  background-blend-mode: screen;
+  text-align: center;
+  background-color: aqua;
+}
+
+.packBtn {
+  width: 50px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.headerBtn {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.albumBtn {
+  width: 50px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+img {
+  width: 193px;
+  height: 270px;
+}
+
+.mainPack {
+  cursor: pointer;
 }
