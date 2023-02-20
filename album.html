@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Album</title>
+    <script src="./dist/album.js"></script>
+    <script src="./dist/control.js"></script>
     <link rel="stylesheet" href="./dist/album.css">
 </head>
 
@@ -14,7 +16,17 @@
         <button><a href="./index.html"> album</a></button>
         <br>
         <button><a href="./index.html"> packs</a></button>
+        <button id="home-button"><a href="./home.html">Home</a></button>
+       
 </header>
+<div id ="app container">
+    <div id="watch">0 : 0 : 0</div>
+    <div>
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+        <button onclick="reset()">reset</button>
+    </div>
+</div>
     <h1>Album</h1>
         <div class="container">
            <div class="container__card">
@@ -102,31 +114,11 @@
 
         <div id="itemsRoot"> </div>
 
-        <!-- <div class="album-container">
-            <div class="album">
-              <div class="card">
-                <img class="card__image" src="imge/images1.jfif" alt="תמונה של הכרטיס">
-              </div>
-              <div class="card">
-                <img class="card__image" src="imge/images1.jfif" alt="תמונה של הכרטיס">
-              </div>
-              <div class="card">
-                <img class="card__image" src="imge/images1.jfif" alt="תמונה של הכרטיס">
-              </div>
-              <div class="card">
-                <img class="card__image" src="imge/images1.jfif" alt="תמונה של הכרטיס">
-              </div>
-              <div class="card">
-                <img class="card__image" src="imge/images1.jfif" alt="תמונה של הכרטיס">
-              </div>
-            </div>
+     
 
 
 
-
-
-            
-          </div> -->
+        
 
    
 </body>
