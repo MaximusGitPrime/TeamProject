@@ -11,3 +11,4 @@ function alertMsg() {
     alert("No More Coins");
 }
 ///////////////////////////////
+var test = 0;
