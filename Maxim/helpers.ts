@@ -15,3 +15,4 @@ alert("No More Coins");
 }
 ///////////////////////////////
 
+const test = 0
