@@ -1,4 +1,4 @@
-var packContainer = document.querySelector(".packContainer");
+var openedPackContainer = document.querySelector(".openedPackContainer");
 var Card = /** @class */ (function () {
     function Card(cardId, cardCategory, cardFace, cardBack) {
         this.cardId = cardId;
@@ -41,15 +41,3 @@ var commonCards = [
     new Card(30, "common", "./projectPhotos/30.PNG", "./projectPhotos/cardBack.PNG"),
 ];
 var rareCards = [];
-var _loop_1 = function (i) {
-    var cardElement = document.createElement("div");
-    cardElement.classList.add("card");
-    cardElement.innerHTML = "\n    <img class = \"front\" src=\"" + commonCards[i].cardFace + "\">\n    <img class = \"back\" src=\"" + commonCards[i].cardBack + "\">";
-    cardElement.addEventListener("click", function () {
-        cardElement.classList.add("flipped");
-    });
-    packContainer.appendChild(cardElement);
-};
-for (var i = 0; i < 5; i++) {
-    _loop_1(i);
-}
