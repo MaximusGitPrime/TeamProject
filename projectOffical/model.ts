@@ -1,4 +1,4 @@
-const packContainer = document.querySelector(".openedPackContainer") as HTMLDivElement
+const openedPackContainer = document.querySelector(".openedPackContainer") as HTMLDivElement
 
 class Card{
     id:number
@@ -71,18 +71,3 @@ const rareCards:Card[]=[
     new Card(53,"./projectPhotos/53.PNG"),
     new Card(54,"./projectPhotos/54.PNG")
 ]
-
-
-for( let i = 0 ; i < 5 ; i++){
-    const cardElement = document.createElement("div")
-    cardElement.classList.add("card")
-    cardElement.innerHTML = `
-    <img class = "front" src="${commonCards[i].cardFace}">
-    <img class = "back" src="./projectPhotos/cardBack.PNG">`
-    cardElement.addEventListener("click" , ()=>{
-        cardElement.classList.add("flipped")
-    })
-    packContainer.appendChild(cardElement)
-}
-
-
