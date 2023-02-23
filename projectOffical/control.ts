@@ -10,7 +10,7 @@ function openCard(e){
         cardElement.classList.add("card")
         cardElement.innerHTML = `
         <img class = "front" src="${commonCards[randomNumbers[i]].cardFace}">
-        <img class = "back" src="${commonCards[randomNumbers[i]].cardBack}">`
+        <img class = "back" src="./projectPhotos/cardBack.PNG">`
         console.log(cardElement);
 
         openedPackContainer.appendChild(cardElement)

@@ -6,7 +6,7 @@ function openCard(e) {
     var _loop_1 = function (i) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
-        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + commonCards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"" + commonCards[randomNumbers[i]].cardBack + "\">";
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + commonCards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
         console.log(cardElement);
         openedPackContainer.appendChild(cardElement);
         if (cardElement) {
