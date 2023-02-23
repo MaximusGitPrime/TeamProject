@@ -47,13 +47,4 @@ const cards:Card[]=[
 ]
 
 
-cards.forEach((card)=>{
-    const cardElement = document.createElement("div")
-    cardElement.classList.add("card")
-    cardElement.innerHTML = `
-    <img class = "front" src="${cards[0].cardFace}">
-    <img class = "back" src="${cards[0].cardBack}">
-
-    `
-})
 const userCards:Card[]=[]

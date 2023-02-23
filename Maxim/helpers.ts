@@ -14,5 +14,42 @@ function alertMsg()
 alert("No More Coins");
 }
 ///////////////////////////////
+//creating Div and Images elements on the DOM
+function divChiledImgCreator(){
+    const cardContainer = document.querySelector(".cardContainer")!;
+    const card = cards[randomNumber()];
 
-const test = 0
+const cardDiv = document.createElement("div")
+cardDiv.classList.add("card")
+cardContainer.appendChild(cardDiv)
+  const backdiv = document.createElement("div");
+  backdiv.classList.add("cardFace", "back");
+  cardDiv.appendChild(backdiv)
+  const backImg = document.createElement("img")
+  backImg.src = card.cardBack;
+  backdiv.appendChild(backImg)
+
+  const facediv = document.createElement("div");
+  facediv.classList.add("cardFace", "face");
+  cardDiv.appendChild(facediv)
+  const faceImg = document.createElement("img")
+  faceImg.src = card.cardFace;
+  facediv.appendChild(faceImg)
+
+  
+  }
+
+const cardToFlip = document.querySelector(".card")!
+if (cardToFlip){
+  cardToFlip.addEventListener("click", cardFlip)
+}
+
+function cardFlip(e){
+  console.log("Card flip func activted");
+  e.preventDefault()
+  
+this.document.querySelector(".card")!.classList.replace("card","fliped")
+}
+
+
+ 

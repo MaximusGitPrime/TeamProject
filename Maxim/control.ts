@@ -12,7 +12,7 @@ cardContainer.innerHTML = `
 const packOnClick= document.querySelector(".packOne") as HTMLImageElement
 packOnClick.addEventListener("click", showCards)
 
-// showing the cards after click on pack + Coins counter
+//showing the cards after click on pack + Coins counter
 // function showCards(e){
 //     try {
 //         e.preventDefault()
@@ -38,26 +38,10 @@ packOnClick.addEventListener("click", showCards)
 function showCards(e) {
    
       e.preventDefault();
-      console.log("Function showCard activated");
   
       // Get a random card from the cards array
       const card = cards[randomNumber()];
-  
-      // Create a new Faceimg element for the card
-      const cardImage = document.createElement("img");
-      cardImage.classList.add("front");
-      cardImage.src = card.cardFace;
-
-      // Create a new backimg element for the card
-
-      const cardBackImage = document.createElement("img");
-      cardBackImage.classList.add("back");
-      cardBackImage.src = card.cardBack;
-  
-      // Append the card image to the .cardContainer element
-      const cardContainer = document.querySelector(".cardContainer")!;
-      cardContainer.appendChild(cardImage);
-      cardContainer.appendChild(cardBackImage);
+      divChiledImgCreator()
 
       //push to new userCards array
       userCards.push(card)
@@ -69,11 +53,12 @@ function showCards(e) {
     // Update the coin counter
     counter = counter - 400;
     coinsCounter.textContent = "Coins: " + counter;
-  
     // Disable the pack if the user has no coins left
     if (counter == 0) {
       timeMsg();
       packOnClick.removeEventListener("click", showCards);
-      return;
+      
     }
+
+
   }
