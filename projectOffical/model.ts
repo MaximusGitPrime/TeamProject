@@ -15,7 +15,8 @@ class Card{
 }
 
 
-const cards:Card[]=[
+
+const commonCards:Card[]=[
     new Card(1,"common","./projectPhotos/1.PNG","./projectPhotos/cardBack.PNG"),
     new Card(2,"common","./projectPhotos/2.PNG","./projectPhotos/cardBack.PNG"),
     new Card(3,"common","./projectPhotos/3.PNG","./projectPhotos/cardBack.PNG"),
@@ -48,15 +49,19 @@ const cards:Card[]=[
     new Card(30,"common","./projectPhotos/30.PNG","./projectPhotos/cardBack.PNG"),
 ]
 
+const rareCards:Card[]=[]
 
-cards.forEach((card)=>{
+
+for( let i = 0 ; i < 5 ; i++){
     const cardElement = document.createElement("div")
     cardElement.classList.add("card")
     cardElement.innerHTML = `
-    <img class = "front" src="${card.cardFace}">
-    <img class = "back" src="${card.cardBack}">`
+    <img class = "front" src="${commonCards[i].cardFace}">
+    <img class = "back" src="${commonCards[i].cardBack}">`
     cardElement.addEventListener("click" , ()=>{
         cardElement.classList.add("flipped")
     })
     packContainer.appendChild(cardElement)
-})
+}
+
+

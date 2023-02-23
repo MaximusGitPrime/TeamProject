@@ -8,7 +8,7 @@ var Card = /** @class */ (function () {
     }
     return Card;
 }());
-var cards = [
+var commonCards = [
     new Card(1, "common", "./projectPhotos/1.PNG", "./projectPhotos/cardBack.PNG"),
     new Card(2, "common", "./projectPhotos/2.PNG", "./projectPhotos/cardBack.PNG"),
     new Card(3, "common", "./projectPhotos/3.PNG", "./projectPhotos/cardBack.PNG"),
@@ -40,12 +40,16 @@ var cards = [
     new Card(29, "common", "./projectPhotos/29.PNG", "./projectPhotos/cardBack.PNG"),
     new Card(30, "common", "./projectPhotos/30.PNG", "./projectPhotos/cardBack.PNG"),
 ];
-cards.forEach(function (card) {
+var rareCards = [];
+var _loop_1 = function (i) {
     var cardElement = document.createElement("div");
     cardElement.classList.add("card");
-    cardElement.innerHTML = "\n    <img class = \"front\" src=\"" + card.cardFace + "\">\n    <img class = \"back\" src=\"" + card.cardBack + "\">";
+    cardElement.innerHTML = "\n    <img class = \"front\" src=\"" + commonCards[i].cardFace + "\">\n    <img class = \"back\" src=\"" + commonCards[i].cardBack + "\">";
     cardElement.addEventListener("click", function () {
         cardElement.classList.add("flipped");
     });
     packContainer.appendChild(cardElement);
-});
+};
+for (var i = 0; i < 5; i++) {
+    _loop_1(i);
+}

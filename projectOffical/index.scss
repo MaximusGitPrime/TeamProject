@@ -5,21 +5,47 @@
   
   html, body {
     height: 100%;
+    width: 100%;
   }
   
-  body {
+h1{
+  text-align: center;
+}
+
+header{
+  height: 155px;
+  text-align: center;
+  .logo{
+    height: 150px;
+
+  }
+}
+
+  nav{
+    width: 100%;
+    background-color:#126deda2;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    h2{
+      text-align: center;
+      width: 45%;
+    }
+  }
+
+ nav h2:hover{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color:#126EED;
+  }
+
+
+  
+  .packContainer{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f3f3f3;
-  }
-  
-  .packContainer{
-    width: 80%;
-    height: 80%;
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px ;
-    gap: 5px;
 
   }
 

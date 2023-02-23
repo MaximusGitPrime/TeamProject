@@ -1,0 +1,41 @@
+.packStoreContainer {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+.packStoreContainer .pack {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.packStoreContainer .bronzePack, .packStoreContainer .silverPack, .packStoreContainer .goldPack {
+  height: 270px;
+  width: 193px;
+  position: relative;
+}
+.packStoreContainer .bronzePack h2, .packStoreContainer .silverPack h2, .packStoreContainer .goldPack h2 {
+  position: absolute;
+  top: -40px;
+  left: 43px;
+  visibility: hidden;
+}
+.packStoreContainer .bronzePack p, .packStoreContainer .silverPack p, .packStoreContainer .goldPack p {
+  text-align: center;
+  visibility: hidden;
+  margin-top: 8px;
+}
+
+.bronzePack:hover, .silverPack:hover, .goldPack:hover {
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px;
+}
+.bronzePack:hover h2, .silverPack:hover h2, .goldPack:hover h2 {
+  visibility: visible;
+}
+.bronzePack:hover p, .silverPack:hover p, .goldPack:hover p {
+  visibility: visible;
+}
