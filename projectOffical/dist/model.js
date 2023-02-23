@@ -1,3 +1,4 @@
+var packContainer = document.querySelector(".packContainer");
 var Card = /** @class */ (function () {
     function Card(cardId, cardCategory, cardFace, cardBack) {
         this.cardId = cardId;
@@ -42,5 +43,9 @@ var cards = [
 cards.forEach(function (card) {
     var cardElement = document.createElement("div");
     cardElement.classList.add("card");
-    cardElement.innerHTML = "\n    <img class = \"front\" src=\"" + cards[0].cardFace + "\">\n    <img class = \"back\" src=\"" + cards[0].cardBack + "\">\n\n    ";
+    cardElement.innerHTML = "\n    <img class = \"front\" src=\"" + card.cardFace + "\">\n    <img class = \"back\" src=\"" + card.cardBack + "\">";
+    cardElement.addEventListener("click", function () {
+        cardElement.classList.add("flipped");
+    });
+    packContainer.appendChild(cardElement);
 });

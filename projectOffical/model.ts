@@ -1,3 +1,5 @@
+const packContainer = document.querySelector(".packContainer") as HTMLDivElement
+
 class Card{
     id:number
     category:string
@@ -51,8 +53,10 @@ cards.forEach((card)=>{
     const cardElement = document.createElement("div")
     cardElement.classList.add("card")
     cardElement.innerHTML = `
-    <img class = "front" src="${cards[0].cardFace}">
-    <img class = "back" src="${cards[0].cardBack}">
-
-    `
+    <img class = "front" src="${card.cardFace}">
+    <img class = "back" src="${card.cardBack}">`
+    cardElement.addEventListener("click" , ()=>{
+        cardElement.classList.add("flipped")
+    })
+    packContainer.appendChild(cardElement)
 })
