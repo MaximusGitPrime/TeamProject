@@ -46,6 +46,7 @@ const cards:Card[]=[
     new Card(30,"common","./projectPhotos/30.PNG","./projectPhotos/cardBack.PNG"),
 ]
 
+<<<<<<< Updated upstream
 
 cards.forEach((card)=>{
     const cardElement = document.createElement("div")
@@ -56,3 +57,31 @@ cards.forEach((card)=>{
 
     `
 })
+=======
+const rareCards:Card[]=[
+    new Card(31,"./projectPhotos/specials/31.PNG"),
+    new Card(32,"./projectPhotos/specials/32.PNG"),
+    new Card(33,"./projectPhotos/specials/33.PNG"),
+    new Card(34,"./projectPhotos/specials/34.PNG"),
+    new Card(35,"./projectPhotos/specials/35.PNG"),
+    new Card(36,"./projectPhotos/specials/36.PNG"),
+    new Card(37,"./projectPhotos/specials/37.PNG"),
+    new Card(38,"./projectPhotos/specials/38.PNG"),
+    new Card(39,"./projectPhotos/specials/39.PNG"),
+    new Card(40,"./projectPhotos/specials/40.PNG"),
+    new Card(41,"./projectPhotos/specials/41.PNG"),
+    new Card(42,"./projectPhotos/specials/42.PNG"),
+    new Card(43,"./projectPhotos/specials/43.PNG"),
+    new Card(44,"./projectPhotos/specials/44.PNG"),
+    new Card(45,"./projectPhotos/specials/45.PNG"),
+    new Card(46,"./projectPhotos/specials/46.PNG"),
+    new Card(47,"./projectPhotos/specials/47.PNG"),
+    new Card(48,"./projectPhotos/specials/48.PNG"),
+    new Card(49,"./projectPhotos/specials/49.PNG"),
+    new Card(50,"./projectPhotos/specials/50.PNG"),
+    new Card(51,"./projectPhotos/specials/51.PNG"),
+    new Card(52,"./projectPhotos/specials/52.PNG"),
+    new Card(53,"./projectPhotos/specials/53.PNG"),
+    new Card(54,"./projectPhotos/specials/54.PNG")
+]
+>>>>>>> Stashed changes
