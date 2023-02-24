@@ -14,7 +14,7 @@ loginForm.addEventListener('submit', function (event) {
         hidefx.style.display = "none";
         document.querySelector(".loader").style.display = "block";
         setTimeout(function() {
-            window.location.href = "https://google.com/";
+            window.location.href = "../projectOffical/index.html";
           }, 3000);
     }
     else {
