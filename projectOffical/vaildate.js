@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var logoutButton = document.querySelector('#logout-button');
     var currentPage = window.location.pathname.split('/').pop();
 
-    if (!currentUser && currentPage !== 'login.html') {
+    if (!currentUser && currentPage !== '../Login&Register/index.html') {
         alert('You are logged out, log in first!');
         window.location.href = '../Login&Register/index.html';
     }
