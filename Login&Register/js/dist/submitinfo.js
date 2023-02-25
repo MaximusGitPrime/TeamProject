@@ -11,6 +11,7 @@ loginForm.addEventListener('submit', function (event) {
     var password = loginPasswordInput.value;
     if (localStorage.getItem(username) === password) {
         alert('Login successful!');
+        localStorage.setItem('current_user', username);
         hidefx.style.display = "none";
         document.querySelector(".loader").style.display = "block";
         setTimeout(function() {
