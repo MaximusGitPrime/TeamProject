@@ -12,9 +12,9 @@
 
 :root {
   --container: 120rem;
-  --primary: hsl(0, 70%, 52%);
+  --primary: #5e7effa6;
   --white: #e9eaec27;
-  --white-light: #e9eaec27;
+  --white-light: #e9eaec00;
   --box-shadow: hsl(220, 7.32%, 91.96%);
 }
 
@@ -27,7 +27,10 @@ body {
   margin: 0;
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
-  background: var(--box-shadow);
+  background-image: url("https://i.ibb.co/xSH84p5/bgg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #particles-js {
@@ -57,6 +60,7 @@ header {
 
 .section-heading {
   margin: 3rem 0;
+  color: white;
   font-size: 4rem;
   padding-bottom: 0.7rem;
   position: relative;
@@ -69,7 +73,6 @@ header {
 .tab-info {
   width: 70%;
   margin: 0 auto 3rem auto;
-  box-shadow: 0 0.8rem 1rem var(--box-shadow);
 }
 
 @media (max-width: 767px) {
@@ -77,10 +80,14 @@ header {
     width: 90%;
   }
 }
+.h2spe {
+  color: white;
+}
+
 .tab-filter-info {
   padding: 2rem;
   text-align: center;
-  background: #e9eaec27;
+  background: #e9eaec00;
 }
 
 .filter-btn {
@@ -91,6 +98,7 @@ header {
   align-items: center;
   gap: 0.5rem;
   font-weight: 500;
+  color: white;
 }
 
 .filter-btn.active {
@@ -99,7 +107,7 @@ header {
 }
 
 .tab-filter-item-box {
-  background: var(--white);
+  background: #e9eaec00;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -111,7 +119,7 @@ header {
   position: absolute;
   padding: 0rem 3rem;
   transform: translateY(100%);
-  background: var(--white-light);
+  background: #e9eaec00;
   transition: transform 0.5s ease-in-out;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
@@ -122,9 +130,14 @@ header {
   width: 30rem;
 }
 
-.tab-heading {
+.intro-heading {
+  color: white;
   padding: 2rem 0;
   font-size: 3rem;
+}
+
+.intro-p {
+  color: white;
 }
 
 .tab-item.select_tab {
@@ -141,15 +154,15 @@ header {
   border-radius: 10px;
   outline: none;
   transition: all 0.2s;
-  color: black;
+  color: white;
 }
 
 .usrname-input:focus {
-  border: 2px solid rgba(223, 19, 19, 0.356);
+  border: 2px solid #5e7effa6;
 }
 
 .pswrd-input:focus {
-  border: 2px solid rgba(223, 19, 19, 0.356);
+  border: 2px solid #5e7effa6;
 }
 
 .pswrd-input {
@@ -159,11 +172,12 @@ header {
   border-radius: 10px;
   outline: none;
   transition: all 0.2s;
-  color: black;
+  color: white;
 }
 
 .usrname-input::placeholder {
   opacity: 1;
+  color: rgba(255, 255, 255, 0.452);
   transition: all 0.2s;
 }
 
@@ -174,6 +188,7 @@ header {
 
 .pswrd-input::placeholder {
   opacity: 1;
+  color: rgba(255, 255, 255, 0.452);
   transition: all 0.2s;
 }
 
@@ -207,6 +222,69 @@ header {
   color: white;
 }
 
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
 @keyframes feadIn {
   0% {
     opacity: 0;
@@ -222,8 +300,8 @@ footer {
 footer {
   font-family: "Montserrat", sans-serif;
   background: #240000;
-  background: linear-gradient(90deg, rgba(90, 2, 2, 0.562) 97%, rgba(90, 2, 2, 0.562) 97%);
-  border-top: 1px solid #eb161679;
+  background: #5e7effa6;
+  border-top: 1px solid #5E7EFF;
   font-size: 17px;
   padding: 15px 5px;
   color: #ffffff;

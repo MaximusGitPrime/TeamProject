@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/helpers.js" defer></script>
-    <script src="./dist/model.js" defer></script>
-    <script src="./dist/control.js" defer></script>
-    <link rel="stylesheet" href="./dist/main.css">
     <title>Document</title>
-    <h1>Welcome #name</h1>
-    <div class="headerBtn">
-        <h2 class="counter">counter</h2>
-        <div onclick="showCards()" class="packBtn">Packs</div>
-        <div onclick="window.location.href = './album.html'" class="albumBtn">Album</div>
-    </div>
-    <div class="packContainer">
+    <link rel="stylesheet" href="./dist/index.css">
+    <link rel="stylesheet" href="./dist/packStore.css">
+    <script src="./dist/model.js" defer></script>
+    <script src="./dist/helpers.js" defer></script>
+    <script src="./dist/control.js" defer></script>
 
-    </div>
-    <div class="cardContainer">
-
-    </div>
-    
 </head>
 <body>
-    
+    <header>
+        <img class="logo" src="./projectPhotos/siteLogo.png" >
+
+    </header>
+    <nav>
+        <h2>packs</h2>
+        <h2>album</h2>
+    </nav>
+    <div class="packStoreContainer">
+        <div class="bronzePack">
+            <img class="pack" src="./projectPhotos/specials/bronze.PNG">
+            <h2>
+                1000 Coins
+            </h2>
+            <p>
+                This pack contains 5 cards , 4 common cards and 1 special card
+            </p>
+        </div>
+        <div class="silverPack">
+            <img class="pack" src="./projectPhotos/specials/silver.PNG">
+
+            <h2>
+                2500 Coins
+            </h2>
+            <p>
+                This pack contains 5 cards , 3 common cards and 2 special cards
+            </p>
+        </div>
+        <div class="goldPack">
+            <img class="pack" src="./projectPhotos/specials/gold.PNG">
+            <h2>
+                5000 Coins
+            </h2>
+            <p>
+                This pack contains 5 special cards 
+            </p>
+        </div>        
+    </div>
+
+    <div class="albumContainer hide">
+    </div>
+
+    <div class="openedPackContainer">
+
+    </div>
 </body>
 </html>

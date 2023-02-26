@@ -1,0 +1,48 @@
+.packStoreContainer{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    .pack{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+        .bronzePack , .silverPack , .goldPack{
+            height: 270px;
+            width: 193px;
+            position: relative;
+                 h2{
+                    position: absolute;
+                    top: -40px;
+                    left: 43px;
+                     visibility: hidden;
+                   }
+                p{
+                    text-align: center;
+                    visibility: hidden;
+                    margin-top: 8px;
+            
+                }
+
+        
+
+        }
+}
+
+.bronzePack:hover , .silverPack:hover , .goldPack:hover{
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 2px;
+    h2{
+    visibility: visible;
+    }
+    p{
+        visibility: visible;
+    }
+        
+}
+
