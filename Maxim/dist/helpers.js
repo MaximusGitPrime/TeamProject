@@ -11,32 +11,56 @@ function alertMsg() {
     alert("No More Coins");
 }
 ///////////////////////////////
-//creating Div and Images elements on the DOM
-function divChiledImgCreator() {
-    var cardContainer = document.querySelector(".cardContainer");
-    var card = cards[randomNumber()];
-    var cardDiv = document.createElement("div");
-    cardDiv.classList.add("card");
-    cardContainer.appendChild(cardDiv);
-    var backdiv = document.createElement("div");
-    backdiv.classList.add("cardFace", "back");
-    cardDiv.appendChild(backdiv);
-    var backImg = document.createElement("img");
-    backImg.src = card.cardBack;
-    backdiv.appendChild(backImg);
-    var facediv = document.createElement("div");
-    facediv.classList.add("cardFace", "face");
-    cardDiv.appendChild(facediv);
-    var faceImg = document.createElement("img");
-    faceImg.src = card.cardFace;
-    facediv.appendChild(faceImg);
-}
-var cardToFlip = document.querySelector(".card");
-if (cardToFlip) {
-    cardToFlip.addEventListener("click", cardFlip);
-}
-function cardFlip(e) {
-    console.log("Card flip func activted");
+var test = 0;
+function openSilverCard(e) {
     e.preventDefault();
-    this.document.querySelector(".card").classList.replace("card", "fliped");
+    console.log("Silver Pack Func Activated");
+    var _loop_1 = function (i) {
+        var cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + commonCards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        openedPackContainer.appendChild(cardElement);
+        if (cardElement) {
+            cardElement.addEventListener("click", function () {
+                cardElement.classList.add("flipped");
+            });
+        }
+        openedPackContainer.appendChild(cardElement);
+    };
+    for (var i = 0; i < 3; i++) {
+        _loop_1(i);
+    }
+    var _loop_2 = function (i) {
+        var cardRareElement = document.createElement("div");
+        cardRareElement.classList.add("card");
+        cardRareElement.innerHTML = "\n        <img class = \"front\" src=\"" + rareCards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        openedPackContainer.appendChild(cardRareElement);
+        if (cardRareElement) {
+            cardRareElement.addEventListener("click", function () {
+                cardRareElement.classList.add("flipped");
+            });
+        }
+    };
+    for (var i = 0; i < 2; i++) {
+        _loop_2(i);
+    }
+}
+function openGoldCard(e) {
+    e.preventDefault();
+    console.log("Gold Pack Func Activated");
+    var _loop_3 = function (i) {
+        var cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + rareCards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        openedPackContainer.appendChild(cardElement);
+        if (cardElement) {
+            cardElement.addEventListener("click", function () {
+                cardElement.classList.add("flipped");
+            });
+        }
+        openedPackContainer.appendChild(cardElement);
+    };
+    for (var i = 0; i < 5; i++) {
+        _loop_3(i);
+    }
 }
