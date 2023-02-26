@@ -10,3 +10,16 @@ function generateRandomNumbers() {
     return numbers;
   }
   const randomNumbers = generateRandomNumbers();
+
+
+  function generateRandomNumbersRare() {
+    const numbers:any = [];
+    while (numbers.length < 5) {
+      const random = Math.floor(Math.random() * (24-0)+0);
+      if (!numbers.includes(random)) {
+        numbers.push(random);
+      }
+    }
+    return numbers;
+  }
+  const rareRandomNumbers = generateRandomNumbersRare();
