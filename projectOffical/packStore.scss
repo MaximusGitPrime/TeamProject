@@ -14,6 +14,7 @@
         .bronzePack , .silverPack , .goldPack{
             height: 270px;
             width: 193px;
+            border-radius: 6px;
             position: relative;
                  h2{
                     position: absolute;
@@ -28,6 +29,8 @@
             
                 }
 
+                box-shadow: 0 0 10px 2px;
+
         
 
         }
@@ -36,7 +39,7 @@
 .bronzePack:hover , .silverPack:hover , .goldPack:hover{
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 0 10px 2px;
+    box-shadow: 0 0 10px 5px;
     h2{
     visibility: visible;
     }

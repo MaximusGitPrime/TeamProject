@@ -14,7 +14,9 @@
 .packStoreContainer .bronzePack, .packStoreContainer .silverPack, .packStoreContainer .goldPack {
   height: 270px;
   width: 193px;
+  border-radius: 6px;
   position: relative;
+  box-shadow: 0 0 10px 2px;
 }
 .packStoreContainer .bronzePack h2, .packStoreContainer .silverPack h2, .packStoreContainer .goldPack h2 {
   position: absolute;
@@ -31,7 +33,7 @@
 .bronzePack:hover, .silverPack:hover, .goldPack:hover {
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 10px 2px;
+  box-shadow: 0 0 10px 5px;
 }
 .bronzePack:hover h2, .silverPack:hover h2, .goldPack:hover h2 {
   visibility: visible;

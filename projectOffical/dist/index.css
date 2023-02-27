@@ -20,6 +20,24 @@ header .logo {
   height: 150px;
 }
 
+.greet {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#greeting {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#logout-button {
+  display: block;
+  margin: 20px auto 0;
+}
+
 nav {
   width: 100%;
   background-color: #126deda2;
@@ -73,4 +91,8 @@ nav h2:hover {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+.hide {
+  display: none;
 }
