@@ -1,4 +1,9 @@
 var openedPackContainer = document.querySelector(".openedPackContainer");
+var Reraty;
+(function (Reraty) {
+    Reraty["COMMON"] = "common";
+    Reraty["RARE"] = "rare";
+})(Reraty || (Reraty = {}));
 var Card = /** @class */ (function () {
     function Card(cardId, cardFace, rarity) {
         this.cardId = cardId;
@@ -38,8 +43,6 @@ var commonCards = [
     new Card(28, "./projectPhotos/28.PNG", "common"),
     new Card(29, "./projectPhotos/29.PNG", "common"),
     new Card(30, "./projectPhotos/30.PNG", "common"),
-];
-var rareCards = [
     new Card(31, "./projectPhotos/specials/31.PNG", "rare"),
     new Card(32, "./projectPhotos/specials/32.PNG", "rare"),
     new Card(33, "./projectPhotos/specials/33.PNG", "rare"),
@@ -67,3 +70,4 @@ var rareCards = [
     new Card(55, "./projectPhotos/specials/55.PNG", "rare"),
     new Card(56, "./projectPhotos/specials/56.PNG", "rare"),
 ];
+var rareCards = [];

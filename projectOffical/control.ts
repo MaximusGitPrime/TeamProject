@@ -7,6 +7,9 @@ goldPack.addEventListener("click", openGoldCard)
 
 function openBronzeCard(e){
     e.preventDefault()
+
+ console.log( getRandomCard(Reraty.COMMON,commonCards,4));
+
     console.log("Bronze Pack Func Activated 1");
     
     for( let i = 0 ; i < 4 ; i++){

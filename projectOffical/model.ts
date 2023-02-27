@@ -1,5 +1,10 @@
 const openedPackContainer = document.querySelector(".openedPackContainer") as HTMLDivElement
 
+enum Reraty{
+    COMMON = 'common',
+    RARE = 'rare'
+}
+
 class Card{
     id:number
     face:string
@@ -7,7 +12,7 @@ class Card{
     constructor(
         public cardId:number,
         public cardFace:string,
-        public rarity: 'common' | 'rare',
+        public rarity: Reraty
     ){}
 }
 
@@ -44,9 +49,6 @@ const commonCards:Card[]=[
     new Card(28,"./projectPhotos/28.PNG", "common"),
     new Card(29,"./projectPhotos/29.PNG", "common"),
     new Card(30,"./projectPhotos/30.PNG", "common"),
-]
-
-const rareCards:Card[]=[
     new Card(31,"./projectPhotos/specials/31.PNG", "rare"),
     new Card(32,"./projectPhotos/specials/32.PNG", "rare"),
     new Card(33,"./projectPhotos/specials/33.PNG", "rare"),
@@ -73,5 +75,9 @@ const rareCards:Card[]=[
     new Card(54,"./projectPhotos/specials/54.PNG", "rare"),
     new Card(55,"./projectPhotos/specials/55.PNG", "rare"),
     new Card(56,"./projectPhotos/specials/56.PNG", "rare"),
+]
+
+const rareCards:Card[]=[
+  
 
 ]
