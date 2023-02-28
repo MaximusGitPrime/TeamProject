@@ -12,7 +12,7 @@ var Card = /** @class */ (function () {
     }
     return Card;
 }());
-var commonCards = [
+var cards = [
     new Card(1, "./projectPhotos/1.PNG", "common"),
     new Card(2, "./projectPhotos/2.PNG", "common"),
     new Card(3, "./projectPhotos/3.PNG", "common"),
@@ -70,4 +70,3 @@ var commonCards = [
     new Card(55, "./projectPhotos/specials/55.PNG", "rare"),
     new Card(56, "./projectPhotos/specials/56.PNG", "rare"),
 ];
-var rareCards = [];

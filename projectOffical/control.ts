@@ -8,7 +8,7 @@ goldPack.addEventListener("click", openGoldCard)
 function openBronzeCard(e){
     e.preventDefault()
 
- console.log( getRandomCard(Reraty.COMMON,commonCards,4));
+ console.log( getRandomCard(Reraty.COMMON,cards,4));
 
     console.log("Bronze Pack Func Activated 1");
     
@@ -16,7 +16,7 @@ function openBronzeCard(e){
         const cardElement = document.createElement("div")
         cardElement.classList.add("card")
         cardElement.innerHTML = `
-        <img class = "front" src="${commonCards[randomNumbers[i]].cardFace}">
+        <img class = "front" src="${cards[randomNumbers[i]].cardFace}">
         <img class = "back" src="./projectPhotos/cardBack.PNG">`
         openedPackContainer.appendChild(cardElement)
 
@@ -31,7 +31,7 @@ function openBronzeCard(e){
 const cardRareElement = document.createElement("div")
 cardRareElement.classList.add("card")
 cardRareElement.innerHTML = `
-        <img class = "front" src="${rareCards[rareRandomNumbers[0]].cardFace}">
+        <img class = "front" src="${cards[rareRandomNumbers[0]].cardFace}">
         <img class = "back" src="./projectPhotos/cardBack.PNG">`
         openedPackContainer.appendChild(cardRareElement)
         if(cardRareElement){
@@ -49,7 +49,7 @@ function openSilverCard(e){
         const cardElement = document.createElement("div")
         cardElement.classList.add("card")
         cardElement.innerHTML = `
-        <img class = "front" src="${commonCards[randomNumbers[i]].cardFace}">
+        <img class = "front" src="${cards[randomNumbers[i]].cardFace}">
         <img class = "back" src="./projectPhotos/cardBack.PNG">`
         openedPackContainer.appendChild(cardElement)
 
@@ -65,7 +65,7 @@ for(let i =0; i<2; i++){
 const cardRareElement = document.createElement("div")
 cardRareElement.classList.add("card")
 cardRareElement.innerHTML = `
-        <img class = "front" src="${rareCards[rareRandomNumbers[i]].cardFace}">
+        <img class = "front" src="${cards[rareRandomNumbers[i]].cardFace}">
         <img class = "back" src="./projectPhotos/cardBack.PNG">`
     
         openedPackContainer.appendChild(cardRareElement)
@@ -85,7 +85,7 @@ function openGoldCard(e){
         const cardElement = document.createElement("div")
         cardElement.classList.add("card")
         cardElement.innerHTML = `
-        <img class = "front" src="${rareCards[rareRandomNumbers[i]].cardFace}">
+        <img class = "front" src="${cards[rareRandomNumbers[i]].cardFace}">
         <img class = "back" src="./projectPhotos/cardBack.PNG">`
         openedPackContainer.appendChild(cardElement)
 

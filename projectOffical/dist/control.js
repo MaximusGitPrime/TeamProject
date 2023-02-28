@@ -6,12 +6,12 @@ silverPack.addEventListener("click", openSilverCard);
 goldPack.addEventListener("click", openGoldCard);
 function openBronzeCard(e) {
     e.preventDefault();
-    console.log(getRandomCard(Reraty.COMMON, commonCards, 4));
+    console.log(getRandomCard(Reraty.COMMON, cards, 4));
     console.log("Bronze Pack Func Activated 1");
     var _loop_1 = function (i) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
-        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + commonCards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + cards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
         openedPackContainer.appendChild(cardElement);
         if (cardElement) {
             cardElement.addEventListener("click", function () {
@@ -25,7 +25,7 @@ function openBronzeCard(e) {
     }
     var cardRareElement = document.createElement("div");
     cardRareElement.classList.add("card");
-    cardRareElement.innerHTML = "\n        <img class = \"front\" src=\"" + rareCards[rareRandomNumbers[0]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+    cardRareElement.innerHTML = "\n        <img class = \"front\" src=\"" + cards[rareRandomNumbers[0]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
     openedPackContainer.appendChild(cardRareElement);
     if (cardRareElement) {
         cardRareElement.addEventListener("click", function () {
@@ -39,7 +39,7 @@ function openSilverCard(e) {
     var _loop_2 = function (i) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
-        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + commonCards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + cards[randomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
         openedPackContainer.appendChild(cardElement);
         if (cardElement) {
             cardElement.addEventListener("click", function () {
@@ -54,7 +54,7 @@ function openSilverCard(e) {
     var _loop_3 = function (i) {
         var cardRareElement = document.createElement("div");
         cardRareElement.classList.add("card");
-        cardRareElement.innerHTML = "\n        <img class = \"front\" src=\"" + rareCards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        cardRareElement.innerHTML = "\n        <img class = \"front\" src=\"" + cards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
         openedPackContainer.appendChild(cardRareElement);
         if (cardRareElement) {
             cardRareElement.addEventListener("click", function () {
@@ -72,7 +72,7 @@ function openGoldCard(e) {
     var _loop_4 = function (i) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
-        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + rareCards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
+        cardElement.innerHTML = "\n        <img class = \"front\" src=\"" + cards[rareRandomNumbers[i]].cardFace + "\">\n        <img class = \"back\" src=\"./projectPhotos/cardBack.PNG\">";
         openedPackContainer.appendChild(cardElement);
         if (cardElement) {
             cardElement.addEventListener("click", function () {
