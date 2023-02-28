@@ -1,18 +1,15 @@
 const openedPackContainer = document.querySelector(".openedPackContainer") as HTMLDivElement
 
-enum Reraty{
-    COMMON = 'common',
-    RARE = 'rare'
-}
 
 class Card{
     id:number
     face:string
+    type:string
     
     constructor(
         public cardId:number,
         public cardFace:string,
-        public rarity: Reraty
+        public cardType:string
     ){}
 }
 

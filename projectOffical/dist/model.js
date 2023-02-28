@@ -1,14 +1,9 @@
 var openedPackContainer = document.querySelector(".openedPackContainer");
-var Reraty;
-(function (Reraty) {
-    Reraty["COMMON"] = "common";
-    Reraty["RARE"] = "rare";
-})(Reraty || (Reraty = {}));
 var Card = /** @class */ (function () {
-    function Card(cardId, cardFace, rarity) {
+    function Card(cardId, cardFace, cardType) {
         this.cardId = cardId;
         this.cardFace = cardFace;
-        this.rarity = rarity;
+        this.cardType = cardType;
     }
     return Card;
 }());

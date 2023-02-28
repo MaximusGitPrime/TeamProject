@@ -59,13 +59,11 @@ header{
     background-color:#126EED;
   }
 
-
-  
-  .packContainer{
-    display: flex;
+  .openedPackContainer{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
     align-items: center;
     justify-content: center;
-    background-color: #f3f3f3;
 
   }
 

@@ -1,100 +1,79 @@
-const bronzePack = document.querySelector(".bronzePack")!
-const silverPack = document.querySelector(".silverPack")!
-const goldPack = document.querySelector(".goldPack")!
-bronzePack.addEventListener("click", openBronzeCard)
-silverPack.addEventListener("click", openSilverCard)
-goldPack.addEventListener("click", openGoldCard)
+const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
+const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
+const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
 
-function openBronzeCard(e){
-    e.preventDefault()
 
- console.log( getRandomCard(Reraty.COMMON,cards,4));
-
-    console.log("Bronze Pack Func Activated 1");
-    
-    for( let i = 0 ; i < 4 ; i++){
-        const cardElement = document.createElement("div")
-        cardElement.classList.add("card")
-        cardElement.innerHTML = `
-        <img class = "front" src="${cards[randomNumbers[i]].cardFace}">
-        <img class = "back" src="./projectPhotos/cardBack.PNG">`
-        openedPackContainer.appendChild(cardElement)
-
-        if(cardElement){
-        cardElement.addEventListener("click" , ()=>{
-            cardElement.classList.add("flipped")
-        })
-        
+function displayPack(pack: Card[]) {
+    for (const card of pack) {
+      const cardElement = document.createElement("div");
+      cardElement.classList.add("card");
+      cardElement.innerHTML = `
+        <img class="front" src="${card.cardFace}">
+        <img class="back" src="./projectPhotos/cardBack.PNG">
+      `;
+      cardElement.addEventListener("click", () => {
+        cardElement.classList.add("flipped");
+      });
+      openedPackContainer.appendChild(cardElement);
     }
-    openedPackContainer.appendChild(cardElement)
-}
-const cardRareElement = document.createElement("div")
-cardRareElement.classList.add("card")
-cardRareElement.innerHTML = `
-        <img class = "front" src="${cards[rareRandomNumbers[0]].cardFace}">
-        <img class = "back" src="./projectPhotos/cardBack.PNG">`
-        openedPackContainer.appendChild(cardRareElement)
-        if(cardRareElement){
-            cardRareElement.addEventListener("click" , ()=>{
-                cardRareElement.classList.add("flipped")
-            })
-}
-}
+    silverPack.classList.add("hide")
+    bronzePack.classList.add("hide")
+    goldPack.classList.add("hide")
+  }
+  
+bronzePack.addEventListener("click", () => {
+  const pack = generatePack(cards, "bronze");
+  displayPack(pack);
+});
 
-function openSilverCard(e){
-    e.preventDefault()
-    console.log("Silver Pack Func Activated");
-    
-    for( let i = 0 ; i < 3 ; i++){
-        const cardElement = document.createElement("div")
-        cardElement.classList.add("card")
-        cardElement.innerHTML = `
-        <img class = "front" src="${cards[randomNumbers[i]].cardFace}">
-        <img class = "back" src="./projectPhotos/cardBack.PNG">`
-        openedPackContainer.appendChild(cardElement)
+silverPack.addEventListener("click", () => {
+  const pack = generatePack(cards, "silver");
+  displayPack(pack);
+});
 
-        if(cardElement){
-        cardElement.addEventListener("click" , ()=>{
-            cardElement.classList.add("flipped")
-        })
-        
-    }
-    openedPackContainer.appendChild(cardElement)
-}
-for(let i =0; i<2; i++){
-const cardRareElement = document.createElement("div")
-cardRareElement.classList.add("card")
-cardRareElement.innerHTML = `
-        <img class = "front" src="${cards[rareRandomNumbers[i]].cardFace}">
-        <img class = "back" src="./projectPhotos/cardBack.PNG">`
-    
-        openedPackContainer.appendChild(cardRareElement)
-        if(cardRareElement){
-            cardRareElement.addEventListener("click" , ()=>{
-                cardRareElement.classList.add("flipped")
-                
-            })
-    }
-}
-}
-function openGoldCard(e){
-    e.preventDefault()
-    console.log("Gold Pack Func Activated");
-    
-    for( let i = 0 ; i < 5 ; i++){
-        const cardElement = document.createElement("div")
-        cardElement.classList.add("card")
-        cardElement.innerHTML = `
-        <img class = "front" src="${cards[rareRandomNumbers[i]].cardFace}">
-        <img class = "back" src="./projectPhotos/cardBack.PNG">`
-        openedPackContainer.appendChild(cardElement)
+goldPack.addEventListener("click", () => {
+  const pack = generatePack(cards, "gold");
+  displayPack(pack);
+});
 
-        if(cardElement){
-        cardElement.addEventListener("click" , ()=>{
-            cardElement.classList.add("flipped")
-        })
-        
-}
-    openedPackContainer.appendChild(cardElement)
-}
+function generatePack(cards: Card[], packType: string): Card[] {
+  let regularCardsCount = 0;
+  let specialCardsCount = 0;
+
+  switch (packType) {
+    case "bronze":
+      regularCardsCount = 4;
+      specialCardsCount = 1;
+      break;
+    case "silver":
+      regularCardsCount = 3;
+      specialCardsCount = 2;
+      break;
+    case "gold":
+      regularCardsCount = 0;
+      specialCardsCount = 5;
+      break;
+    default:
+      throw new Error("Invalid pack type");
+  }
+
+  const pack: Card[] = [];
+  const regularCards = cards.filter((card) => card.cardType === "common");
+  const specialCards = cards.filter((card) => card.cardType === "rare");
+
+  // Add regular cards to the pack
+  for (let i = 0; i < regularCardsCount; i++) {
+    const index = Math.floor(Math.random() * regularCards.length);
+    pack.push(regularCards[index]);
+    regularCards.splice(index, 1);
+  }
+
+  // Add special cards to the pack
+  for (let i = 0; i < specialCardsCount; i++) {
+    const index = Math.floor(Math.random() * specialCards.length);
+    pack.push(specialCards[index]);
+    specialCards.splice(index, 1);
+  }
+
+  return pack;
 }
