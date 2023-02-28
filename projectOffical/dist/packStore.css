@@ -41,3 +41,7 @@
 .bronzePack:hover p, .silverPack:hover p, .goldPack:hover p {
   visibility: visible;
 }
+
+.hide {
+  display: none;
+}

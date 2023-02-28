@@ -1,3 +1,5 @@
+
+const packStoreContainer = document.querySelector(".packStoreContainer") as HTMLDivElement;
 const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
@@ -16,9 +18,10 @@ function displayPack(pack: Card[]) {
       });
       openedPackContainer.appendChild(cardElement);
     }
-    silverPack.classList.add("hide")
-    bronzePack.classList.add("hide")
-    goldPack.classList.add("hide")
+    packStoreContainer.classList.add("hide")
+    // silverPack.classList.add("hide")
+    // bronzePack.classList.add("hide")
+    // goldPack.classList.add("hide")
   }
   
 bronzePack.addEventListener("click", () => {

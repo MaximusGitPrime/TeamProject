@@ -57,10 +57,12 @@ nav h2:hover {
 }
 
 .openedPackContainer {
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px;
-  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+  position: relative;
+  top: 200px;
+  gap: 10px;
 }
 
 .card {

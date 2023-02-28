@@ -1,3 +1,4 @@
+var packStoreContainer = document.querySelector(".packStoreContainer");
 var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
@@ -15,9 +16,10 @@ function displayPack(pack) {
         var card = pack_1[_i];
         _loop_1(card);
     }
-    silverPack.classList.add("hide");
-    bronzePack.classList.add("hide");
-    goldPack.classList.add("hide");
+    packStoreContainer.classList.add("hide");
+    // silverPack.classList.add("hide")
+    // bronzePack.classList.add("hide")
+    // goldPack.classList.add("hide")
 }
 bronzePack.addEventListener("click", function () {
     var pack = generatePack(cards, "bronze");
