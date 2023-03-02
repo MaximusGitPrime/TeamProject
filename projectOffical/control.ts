@@ -3,6 +3,7 @@ const packStoreContainer = document.querySelector(".packStoreContainer") as HTML
 const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
+const packsBtn:any  = document.querySelector(".packsBtn") as HTMLDivElement;
 
 
 function displayPack(pack: Card[]) {
@@ -77,6 +78,24 @@ function generatePack(cards: Card[], packType: string): Card[] {
     pack.push(specialCards[index]);
     specialCards.splice(index, 1);
   }
-
+  localStorage.setItem("current_User", JSON.stringify(pack));
+ 
   return pack;
+
 }
+
+function sendToAlbum(e){
+  e.preventDefault()
+  console.log("send to album activated");
+  
+}
+
+// function openNewPacks(e){
+//   e.preventDefault()
+//   console.log("Packs Button Works");
+//   openedPackContainer.classList.toggle("hide")
+//   packStoreContainer.classList.remove("hide")
+//   generatePack()
+  
+ 
+// }

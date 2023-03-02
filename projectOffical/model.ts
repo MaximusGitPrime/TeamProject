@@ -2,6 +2,7 @@ const openedPackContainer = document.querySelector(".openedPackContainer") as HT
 
 
 class Card{
+    username?:string;
     id:number
     face:string
     type:string
@@ -73,3 +74,4 @@ const cards:Card[]=[
     new Card(55,"./projectPhotos/specials/55.PNG", "rare"),
     new Card(56,"./projectPhotos/specials/56.PNG", "rare"),
 ]
+

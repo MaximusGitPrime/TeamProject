@@ -2,6 +2,7 @@ var packStoreContainer = document.querySelector(".packStoreContainer");
 var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
+var packsBtn = document.querySelector(".packsBtn");
 function displayPack(pack) {
     var _loop_1 = function (card) {
         var cardElement = document.createElement("div");
@@ -67,5 +68,17 @@ function generatePack(cards, packType) {
         pack.push(specialCards[index]);
         specialCards.splice(index, 1);
     }
+    localStorage.setItem("current_User", JSON.stringify(pack));
     return pack;
 }
+function sendToAlbum(e) {
+    e.preventDefault();
+    console.log("send to album activated");
+}
+// function openNewPacks(e){
+//   e.preventDefault()
+//   console.log("Packs Button Works");
+//   openedPackContainer.classList.toggle("hide")
+//   packStoreContainer.classList.remove("hide")
+//   generatePack()
+// }
