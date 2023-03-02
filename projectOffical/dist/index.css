@@ -6,6 +6,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 h1 {
@@ -77,7 +78,7 @@ nav h2:hover {
 .card:hover {
   height: 300px;
   width: 230px;
-  transition: 300ms;
+  transition: 450ms;
 }
 
 .front, .back {
