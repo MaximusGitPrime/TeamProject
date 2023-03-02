@@ -26,17 +26,18 @@ function displayPack(pack) {
     }
     packStoreContainer.classList.add("hide");
 }
+var pack;
 bronzePack.addEventListener("click", function () {
     openedPackContainer.classList.remove("hide");
-    var pack = generatePack(cards, "bronze");
+    pack = generatePack(cards, "bronze");
     displayPack(pack);
 });
 silverPack.addEventListener("click", function () {
-    var pack = generatePack(cards, "silver");
+    pack = generatePack(cards, "silver");
     displayPack(pack);
 });
 goldPack.addEventListener("click", function () {
-    var pack = generatePack(cards, "gold");
+    pack = generatePack(cards, "gold");
     displayPack(pack);
 });
 function generatePack(cards, packType) {
@@ -73,17 +74,26 @@ function generatePack(cards, packType) {
         pack.push(specialCards[index]);
         specialCards.splice(index, 1);
     }
-    localStorage.setItem("current_User", JSON.stringify(pack));
     return pack;
 }
 // function sendToAlbum(e){
 //   e.preventDefault()
 //   console.log("send to album activated");
+//   const existingCardsString = localStorage.getItem('current_user_cards');
+//   const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+//   const updatedCards = existingCards.concat(pack);
+//   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
 // }
 function hadleBackToPacksStore(e) {
     e.preventDefault();
     sendToAlbumBtn.classList.add("hide");
     console.log("Send Button function activatted");
+    // mtn changes to save to local storage -->
+    var existingCardsString = localStorage.getItem('current_user_cards');
+    var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+    var updatedCards = existingCards.concat(pack);
+    // end of changes -->
+    localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
     openedPackContainer.innerHTML = "";
     // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide");

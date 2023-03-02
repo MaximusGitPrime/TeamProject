@@ -35,21 +35,23 @@ function displayPack(pack: Card[]) {
     }
     packStoreContainer.classList.add("hide")
   }
+
+  let pack: Card[];
   
 bronzePack.addEventListener("click", () => {
   openedPackContainer.classList.remove("hide")
 
-  const pack = generatePack(cards, "bronze");
+  pack = generatePack(cards, "bronze");
   displayPack(pack);
 });
 
 silverPack.addEventListener("click", () => {
-  const pack = generatePack(cards, "silver");
+  pack = generatePack(cards, "silver");
   displayPack(pack);
 });
 
 goldPack.addEventListener("click", () => {
-  const pack = generatePack(cards, "gold");
+  pack = generatePack(cards, "gold");
   displayPack(pack);
 });
 
@@ -91,7 +93,6 @@ function generatePack(cards: Card[], packType: string): Card[] {
     pack.push(specialCards[index]);
     specialCards.splice(index, 1);
   }
-  localStorage.setItem("current_User", JSON.stringify(pack));
  
   return pack;
 
@@ -101,11 +102,23 @@ function generatePack(cards: Card[], packType: string): Card[] {
 //   e.preventDefault()
 //   console.log("send to album activated");
   
+//   const existingCardsString = localStorage.getItem('current_user_cards');
+//   const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+//   const updatedCards = existingCards.concat(pack);
+
+//   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
 // }
 function hadleBackToPacksStore(e){
     e.preventDefault()
     sendToAlbumBtn.classList.add("hide")
     console.log("Send Button function activatted");
+    // mtn changes to save to local storage -->
+    const existingCardsString = localStorage.getItem('current_user_cards');
+    const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+    const updatedCards = existingCards.concat(pack);
+    // end of changes -->
+  
+    localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
     openedPackContainer.innerHTML = ""
     // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide")
