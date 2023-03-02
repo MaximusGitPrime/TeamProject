@@ -1,12 +1,13 @@
-
+const openedPackContainer = document.querySelector(".packdCardContainer") as HTMLDivElement
 const packStoreContainer = document.querySelector(".packStoreContainer") as HTMLDivElement;
 const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
-const packsBtn:any  = document.querySelector(".packsBtn") as HTMLDivElement;
+const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
 
 
 function displayPack(pack: Card[]) {
+  let count = 0
     for (const card of pack) {
       const cardElement = document.createElement("div");
       cardElement.classList.add("card");
@@ -16,16 +17,28 @@ function displayPack(pack: Card[]) {
       `;
       cardElement.addEventListener("click", () => {
         cardElement.classList.add("flipped");
+        count++
+        console.log(count);
+        
+        if(count ==5){
+          
+          sendToAlbumBtn.classList.remove("hide")
+          
+        }
+    
+        
       });
+
+
+
       openedPackContainer.appendChild(cardElement);
     }
     packStoreContainer.classList.add("hide")
-    // silverPack.classList.add("hide")
-    // bronzePack.classList.add("hide")
-    // goldPack.classList.add("hide")
   }
   
 bronzePack.addEventListener("click", () => {
+  openedPackContainer.classList.remove("hide")
+
   const pack = generatePack(cards, "bronze");
   displayPack(pack);
 });
@@ -84,18 +97,17 @@ function generatePack(cards: Card[], packType: string): Card[] {
 
 }
 
-function sendToAlbum(e){
-  e.preventDefault()
-  console.log("send to album activated");
-  
-}
-
-// function openNewPacks(e){
+// function sendToAlbum(e){
 //   e.preventDefault()
-//   console.log("Packs Button Works");
-//   openedPackContainer.classList.toggle("hide")
-//   packStoreContainer.classList.remove("hide")
-//   generatePack()
+//   console.log("send to album activated");
   
- 
 // }
+function hadleBackToPacksStore(e){
+    e.preventDefault()
+    sendToAlbumBtn.classList.add("hide")
+    console.log("Send Button function activatted");
+    openedPackContainer.innerHTML = ""
+    // openedPackContainer.classList.toggle("hide")
+    packStoreContainer.classList.remove("hide")
+
+}

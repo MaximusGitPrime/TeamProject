@@ -6,7 +6,7 @@
   html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
   
 h1{
@@ -60,15 +60,14 @@ header{
     background-color:#126EED;
   }
 
-  .openedPackContainer{
+  .packdCardContainer{
    display: flex;
-   flex-wrap: nowrap;
+   flex-wrap: wrap;
    justify-content: center;
    position: relative; 
    top: 200px;
    gap: 10px;
    
- 
   }
 
   .card {
@@ -111,11 +110,8 @@ header{
   .hide{
     display: none;
   }
-  .sendToAlbumBtn{
-    border: 50%;
-    position: relative;
-    top: 30%;
-    align-items: center;
-    left: 47.5%;
-
+  #sendBtn{
+    
+   position: absolute;
+   bottom: -50px;
   }

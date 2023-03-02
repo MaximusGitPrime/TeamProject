@@ -1,15 +1,22 @@
+var openedPackContainer = document.querySelector(".packdCardContainer");
 var packStoreContainer = document.querySelector(".packStoreContainer");
 var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
-var packsBtn = document.querySelector(".packsBtn");
+var sendToAlbumBtn = document.querySelector("#sendBtn");
 function displayPack(pack) {
+    var count = 0;
     var _loop_1 = function (card) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
         cardElement.innerHTML = "\n        <img class=\"front\" src=\"" + card.cardFace + "\">\n        <img class=\"back\" src=\"./projectPhotos/cardBack.PNG\">\n      ";
         cardElement.addEventListener("click", function () {
             cardElement.classList.add("flipped");
+            count++;
+            console.log(count);
+            if (count == 5) {
+                sendToAlbumBtn.classList.remove("hide");
+            }
         });
         openedPackContainer.appendChild(cardElement);
     };
@@ -18,11 +25,9 @@ function displayPack(pack) {
         _loop_1(card);
     }
     packStoreContainer.classList.add("hide");
-    // silverPack.classList.add("hide")
-    // bronzePack.classList.add("hide")
-    // goldPack.classList.add("hide")
 }
 bronzePack.addEventListener("click", function () {
+    openedPackContainer.classList.remove("hide");
     var pack = generatePack(cards, "bronze");
     displayPack(pack);
 });
@@ -71,14 +76,15 @@ function generatePack(cards, packType) {
     localStorage.setItem("current_User", JSON.stringify(pack));
     return pack;
 }
-function sendToAlbum(e) {
-    e.preventDefault();
-    console.log("send to album activated");
-}
-// function openNewPacks(e){
+// function sendToAlbum(e){
 //   e.preventDefault()
-//   console.log("Packs Button Works");
-//   openedPackContainer.classList.toggle("hide")
-//   packStoreContainer.classList.remove("hide")
-//   generatePack()
+//   console.log("send to album activated");
 // }
+function hadleBackToPacksStore(e) {
+    e.preventDefault();
+    sendToAlbumBtn.classList.add("hide");
+    console.log("Send Button function activatted");
+    openedPackContainer.innerHTML = "";
+    // openedPackContainer.classList.toggle("hide")
+    packStoreContainer.classList.remove("hide");
+}

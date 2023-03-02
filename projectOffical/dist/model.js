@@ -1,4 +1,3 @@
-var openedPackContainer = document.querySelector(".openedPackContainer");
 var Card = /** @class */ (function () {
     function Card(cardId, cardFace, cardType) {
         this.cardId = cardId;

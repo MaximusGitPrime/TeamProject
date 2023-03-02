@@ -1,8 +1,6 @@
-const openedPackContainer = document.querySelector(".openedPackContainer") as HTMLDivElement
 
 
 class Card{
-    username?:string;
     id:number
     face:string
     type:string
