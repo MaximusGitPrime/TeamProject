@@ -74,6 +74,12 @@ nav h2:hover {
   cursor: pointer;
 }
 
+.card:hover {
+  height: 300px;
+  width: 230px;
+  transition: 300ms;
+}
+
 .front, .back {
   position: absolute;
   width: 100%;
