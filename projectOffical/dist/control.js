@@ -84,16 +84,17 @@ function generatePack(cards, packType) {
 //   const updatedCards = existingCards.concat(pack);
 //   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
 // }
-function hadleBackToPacksStore(e) {
+function handleBackToPacksStore(e) {
     e.preventDefault();
     sendToAlbumBtn.classList.add("hide");
-    console.log("Send Button function activatted");
+    console.log("Send Button function activated");
     // mtn changes to save to local storage -->
-    var existingCardsString = localStorage.getItem('current_user_cards');
+    var currentUser = localStorage.getItem('current_user');
+    var existingCardsString = localStorage.getItem(currentUser + ".cards");
     var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
     var updatedCards = existingCards.concat(pack);
+    localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
     // end of changes -->
-    localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
     openedPackContainer.innerHTML = "";
     // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide");

@@ -108,17 +108,20 @@ function generatePack(cards: Card[], packType: string): Card[] {
 
 //   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
 // }
-function hadleBackToPacksStore(e){
+function handleBackToPacksStore(e){
     e.preventDefault()
     sendToAlbumBtn.classList.add("hide")
-    console.log("Send Button function activatted");
+    console.log("Send Button function activated");
+
     // mtn changes to save to local storage -->
-    const existingCardsString = localStorage.getItem('current_user_cards');
+    const currentUser = localStorage.getItem('current_user');
+    const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
     const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
     const updatedCards = existingCards.concat(pack);
+    localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
+    
     // end of changes -->
   
-    localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
     openedPackContainer.innerHTML = ""
     // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide")

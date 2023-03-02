@@ -107,5 +107,6 @@ nav h2:hover {
 
 #sendBtn {
   position: absolute;
-  bottom: -50px;
+  bottom: 100px;
+  left: 57rem;
 }
