@@ -114,3 +114,4 @@ function openAlbum(e) {
         openAlbumBtn.onclick = null;
     }
 }
+//heaara
