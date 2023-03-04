@@ -6,6 +6,14 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("../projectPhotos/mainBackground.PNG");
+  background-size: 100vw 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -57,12 +65,11 @@ nav h2:hover {
 }
 
 .packdCardContainer {
+  height: 70vh;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  position: relative;
-  top: 200px;
-  gap: 10px;
+  gap: 20px;
 }
 
 .card {
@@ -72,12 +79,6 @@ nav h2:hover {
   transform-style: preserve-3d;
   transition: transform 0.6s;
   cursor: pointer;
-}
-
-.card:hover {
-  height: 300px;
-  width: 230px;
-  transition: 450ms;
 }
 
 .front, .back {
