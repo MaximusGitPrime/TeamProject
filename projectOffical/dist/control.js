@@ -4,6 +4,8 @@ var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
 var sendToAlbumBtn = document.querySelector("#sendBtn");
+var openAlbumBtn = document.querySelector(".albumBtn");
+var albumContainer = document.querySelector(".albumContainer");
 function displayPack(pack) {
     var count = 0;
     var _loop_1 = function (card) {
@@ -96,6 +98,19 @@ function handleBackToPacksStore(e) {
     localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
     // end of changes -->
     openedPackContainer.innerHTML = "";
-    // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide");
+}
+function openAlbum(e) {
+    e.preventDefault();
+    console.log("openAlbum function activated");
+    if (packStoreContainer.classList.contains("hide") && albumContainer.classList.contains("hide")) {
+        alert("First Send your cards to Album");
+    }
+    else {
+        packStoreContainer.classList.add("hide");
+        albumContainer.classList.remove("hide");
+    }
+    if (!albumContainer.classList.contains("hide")) {
+        openAlbumBtn.onclick = null;
+    }
 }

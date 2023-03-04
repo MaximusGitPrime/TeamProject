@@ -4,6 +4,8 @@ const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
 const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
+const openAlbumBtn = document.querySelector(".albumBtn")  as HTMLDivElement;
+const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
 
 
 function displayPack(pack: Card[]) {
@@ -123,7 +125,23 @@ function handleBackToPacksStore(e){
     // end of changes -->
   
     openedPackContainer.innerHTML = ""
-    // openedPackContainer.classList.toggle("hide")
     packStoreContainer.classList.remove("hide")
 
 }
+ function openAlbum(e){
+  e.preventDefault()
+  console.log("openAlbum function activated");
+
+  if(packStoreContainer.classList.contains("hide") &&  albumContainer.classList.contains("hide") ){
+    alert("First Send your cards to Album")
+  }
+  else{
+    packStoreContainer.classList.add("hide")
+    albumContainer.classList.remove("hide")
+  }
+  
+ if (!albumContainer.classList.contains("hide")){
+  openAlbumBtn.onclick = null
+  }
+  
+ }
