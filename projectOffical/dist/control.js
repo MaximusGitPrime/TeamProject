@@ -46,10 +46,11 @@ bronzePack.addEventListener("click", function () {
             var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
             var updatedCards = existingCards.concat(pack_2);
             localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
-            console.log("Cards saved to local storage:", updatedCards);
             sendToAlbumBtn.classList.add("hide");
             openedPackContainer.innerHTML = "";
             packStoreContainer.classList.remove("hide");
+            pack_2 = [];
+            count = 0;
         });
     }
     else {
@@ -73,10 +74,11 @@ silverPack.addEventListener("click", function () {
             var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
             var updatedCards = existingCards.concat(pack_3);
             localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
-            console.log("Cards saved to local storage:", updatedCards);
             sendToAlbumBtn.classList.add("hide");
             openedPackContainer.innerHTML = "";
             packStoreContainer.classList.remove("hide");
+            pack_3 = [];
+            count = 0;
         });
     }
     else {
@@ -100,10 +102,11 @@ goldPack.addEventListener("click", function () {
             var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
             var updatedCards = existingCards.concat(pack_4);
             localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
-            console.log("Cards saved to local storage:", updatedCards);
             sendToAlbumBtn.classList.add("hide");
             openedPackContainer.innerHTML = "";
             packStoreContainer.classList.remove("hide");
+            pack_4 = [];
+            count = 0;
         });
     }
     else {
