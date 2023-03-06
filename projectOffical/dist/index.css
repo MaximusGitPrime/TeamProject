@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  background-image: url("../projectPhotos/mainBackground.PNG");
+  background-image: url("../projectPhotos/mainBackground2.PNG");
   background-size: 100vw 100vh;
   background-position: center center;
   background-repeat: no-repeat;
@@ -26,24 +26,6 @@ header {
 }
 header .logo {
   height: 150px;
-}
-
-.greet {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-#greeting {
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
-#logout-button {
-  display: block;
-  margin: 20px auto 0;
 }
 
 nav {

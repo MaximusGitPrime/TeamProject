@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CardsBrandName</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./fonts/icomoon/style.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./dist/index.css">
     <link rel="stylesheet" href="./dist/packStore.css">
     <script src="./dist/view.js"></script>
@@ -16,11 +23,52 @@
 <body>
     <header>
 
-        <div class="greet">
-            <h1 id="greeting">Welcome </h1>
-            <button id="logout-button">Logout</button>
-        </div>
-        <script src="./vaildate.js"></script>
+        <aside class="sidebar">
+            <div class="toggle">
+              <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                  </a>
+            </div>
+            <div class="side-inner">
+      
+              <div class="profile">
+                <img src="./images/profile.png" alt="Image" class="img-fluid" id="profile-img">
+                <h3 class="name">$username</h3>
+                <span class="rank">Collector</span>
+              </div>
+              <script src="./js/greet.js"></script>
+              <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+              <div class="counter d-flex justify-content-center">
+                <script src="./js/upload.js"></script>
+                <div class="row justify-content-center">
+                    <div class="col">
+                      <strong class="number">News & Updates</strong>
+                      <span class="number-label">Lorem ipsum dolor sit amet.</span>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="nav-menu">
+                <ul>
+                  <li id="logout-button"><a href="#"><span class="icon-sign-out mr-3"></span>Sign out</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </aside>
+          <main>
+            <div class="site-section">
+              
+            </div>  
+          </main>
+          
+          
+      
+          <script src="js/jquery-3.3.1.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/main.js"></script>
+          <script src="./vaildate.js"></script>
 
     </header>
     <nav>
