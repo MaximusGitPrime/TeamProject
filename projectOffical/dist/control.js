@@ -30,17 +30,85 @@ function displayPack(pack) {
 }
 var pack;
 bronzePack.addEventListener("click", function () {
-    openedPackContainer.classList.remove("hide");
-    pack = generatePack(cards, "bronze");
-    displayPack(pack);
+    var currentUser = localStorage.getItem('current_user');
+    var currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+    var packCost = 1000;
+    if (currentCoins >= packCost) {
+        // mtn-changes ----  subtract the pack cost from the user's coins
+        var newCoins = currentCoins - packCost;
+        localStorage.setItem(currentUser + '.coins', newCoins);
+        // generate and display the pack
+        openedPackContainer.classList.remove("hide");
+        var pack_2 = generatePack(cards, "bronze");
+        displayPack(pack_2);
+        sendToAlbumBtn.addEventListener("click", function () {
+            var existingCardsString = localStorage.getItem(currentUser + ".cards");
+            var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+            var updatedCards = existingCards.concat(pack_2);
+            localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
+            console.log("Cards saved to local storage:", updatedCards);
+            sendToAlbumBtn.classList.add("hide");
+            openedPackContainer.innerHTML = "";
+            packStoreContainer.classList.remove("hide");
+        });
+    }
+    else {
+        alert('You do not have enough coins to purchase this pack.');
+    }
 });
 silverPack.addEventListener("click", function () {
-    pack = generatePack(cards, "silver");
-    displayPack(pack);
+    var currentUser = localStorage.getItem('current_user');
+    var currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+    var packCost = 2500;
+    if (currentCoins >= packCost) {
+        // mtn-changes ---- subtract the pack cost from the user's coins
+        var newCoins = currentCoins - packCost;
+        localStorage.setItem(currentUser + '.coins', newCoins);
+        // generate and display the pack
+        openedPackContainer.classList.remove("hide");
+        var pack_3 = generatePack(cards, "silver");
+        displayPack(pack_3);
+        sendToAlbumBtn.addEventListener("click", function () {
+            var existingCardsString = localStorage.getItem(currentUser + ".cards");
+            var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+            var updatedCards = existingCards.concat(pack_3);
+            localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
+            console.log("Cards saved to local storage:", updatedCards);
+            sendToAlbumBtn.classList.add("hide");
+            openedPackContainer.innerHTML = "";
+            packStoreContainer.classList.remove("hide");
+        });
+    }
+    else {
+        alert('You do not have enough coins to purchase this pack.');
+    }
 });
 goldPack.addEventListener("click", function () {
-    pack = generatePack(cards, "gold");
-    displayPack(pack);
+    var currentUser = localStorage.getItem('current_user');
+    var currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+    var packCost = 5000;
+    if (currentCoins >= packCost) {
+        // mtn-changes ---- subtract the pack cost from the user's coins
+        var newCoins = currentCoins - packCost;
+        localStorage.setItem(currentUser + '.coins', newCoins);
+        // generate and display the pack
+        openedPackContainer.classList.remove("hide");
+        var pack_4 = generatePack(cards, "gold");
+        displayPack(pack_4);
+        sendToAlbumBtn.addEventListener("click", function () {
+            var existingCardsString = localStorage.getItem(currentUser + ".cards");
+            var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+            var updatedCards = existingCards.concat(pack_4);
+            localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
+            console.log("Cards saved to local storage:", updatedCards);
+            sendToAlbumBtn.classList.add("hide");
+            openedPackContainer.innerHTML = "";
+            packStoreContainer.classList.remove("hide");
+        });
+    }
+    else {
+        alert('You do not have enough coins to purchase this pack.');
+    }
 });
 function generatePack(cards, packType) {
     var regularCardsCount = 0;
@@ -77,28 +145,6 @@ function generatePack(cards, packType) {
         specialCards.splice(index, 1);
     }
     return pack;
-}
-// function sendToAlbum(e){
-//   e.preventDefault()
-//   console.log("send to album activated");
-//   const existingCardsString = localStorage.getItem('current_user_cards');
-//   const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
-//   const updatedCards = existingCards.concat(pack);
-//   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
-// }
-function handleBackToPacksStore(e) {
-    e.preventDefault();
-    sendToAlbumBtn.classList.add("hide");
-    console.log("Send Button function activated");
-    // mtn changes to save to local storage -->
-    var currentUser = localStorage.getItem('current_user');
-    var existingCardsString = localStorage.getItem(currentUser + ".cards");
-    var existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
-    var updatedCards = existingCards.concat(pack);
-    localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
-    // end of changes -->
-    openedPackContainer.innerHTML = "";
-    packStoreContainer.classList.remove("hide");
 }
 function openAlbum(e) {
     e.preventDefault();

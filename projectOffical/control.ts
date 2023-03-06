@@ -40,22 +40,98 @@ function displayPack(pack: Card[]) {
 
   let pack: Card[];
   
-bronzePack.addEventListener("click", () => {
-  openedPackContainer.classList.remove("hide")
-
-  pack = generatePack(cards, "bronze");
-  displayPack(pack);
-});
+  bronzePack.addEventListener("click", () => {
+    const currentUser = localStorage.getItem('current_user');
+    const currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+    const packCost = 1000;
+  
+    if (currentCoins >= packCost) {
+      // mtn-changes ----  subtract the pack cost from the user's coins
+      const newCoins = currentCoins - packCost;
+      localStorage.setItem(currentUser + '.coins', newCoins);
+  
+      // generate and display the pack
+      openedPackContainer.classList.remove("hide");
+      let pack = generatePack(cards, "bronze");
+      displayPack(pack);
+  
+      sendToAlbumBtn.addEventListener("click", () => {
+        const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
+        const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+        const updatedCards = existingCards.concat(pack);
+        localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
+        console.log("Cards saved to local storage:", updatedCards);
+        sendToAlbumBtn.classList.add("hide");
+        openedPackContainer.innerHTML = "";
+        packStoreContainer.classList.remove("hide");
+      });
+    } else {
+      alert('You do not have enough coins to purchase this pack.');
+    }
+  });
+    
 
 silverPack.addEventListener("click", () => {
-  pack = generatePack(cards, "silver");
-  displayPack(pack);
+  const currentUser = localStorage.getItem('current_user');
+  const currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+  const packCost = 2500;
+
+  if (currentCoins >= packCost) {
+    // mtn-changes ---- subtract the pack cost from the user's coins
+    const newCoins = currentCoins - packCost;
+    localStorage.setItem(currentUser + '.coins', newCoins);
+
+    // generate and display the pack
+    openedPackContainer.classList.remove("hide");
+    let pack = generatePack(cards, "silver");
+    displayPack(pack);
+
+
+    sendToAlbumBtn.addEventListener("click", () => {
+      const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
+      const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+      const updatedCards = existingCards.concat(pack);
+      localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
+      console.log("Cards saved to local storage:", updatedCards);
+      sendToAlbumBtn.classList.add("hide");
+      openedPackContainer.innerHTML = "";
+      packStoreContainer.classList.remove("hide");
+    });
+  } else {
+    alert('You do not have enough coins to purchase this pack.');
+  }
 });
 
 goldPack.addEventListener("click", () => {
-  pack = generatePack(cards, "gold");
-  displayPack(pack);
+  const currentUser = localStorage.getItem('current_user');
+  const currentCoins = parseInt(localStorage.getItem(currentUser + '.coins'));
+  const packCost = 5000;
+
+  if (currentCoins >= packCost) {
+    // mtn-changes ---- subtract the pack cost from the user's coins
+    const newCoins = currentCoins - packCost;
+    localStorage.setItem(currentUser + '.coins', newCoins);
+
+    // generate and display the pack
+    openedPackContainer.classList.remove("hide");
+    let pack = generatePack(cards, "gold");
+    displayPack(pack);
+
+    sendToAlbumBtn.addEventListener("click", () => {
+      const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
+      const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+      const updatedCards = existingCards.concat(pack);
+      localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
+      console.log("Cards saved to local storage:", updatedCards);
+      sendToAlbumBtn.classList.add("hide");
+      openedPackContainer.innerHTML = "";
+      packStoreContainer.classList.remove("hide");
+    });
+  } else {
+    alert('You do not have enough coins to purchase this pack.');
+  }
 });
+
 
 function generatePack(cards: Card[], packType: string): Card[] {
   let regularCardsCount = 0;
@@ -100,32 +176,22 @@ function generatePack(cards: Card[], packType: string): Card[] {
 
 }
 
-// function sendToAlbum(e){
-//   e.preventDefault()
-//   console.log("send to album activated");
-  
-//   const existingCardsString = localStorage.getItem('current_user_cards');
-//   const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
-//   const updatedCards = existingCards.concat(pack);
+// function handleBackToPacksStore(e){
+//     e.preventDefault()
+//     sendToAlbumBtn.classList.add("hide")
+//     console.log("Send Button function activated");
 
-//   localStorage.setItem('current_user_cards', JSON.stringify(updatedCards));
-// }
-function handleBackToPacksStore(e){
-    e.preventDefault()
-    sendToAlbumBtn.classList.add("hide")
-    console.log("Send Button function activated");
-
-    // mtn changes to save to local storage -->
-    const currentUser = localStorage.getItem('current_user');
-    const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
-    const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
-    const updatedCards = existingCards.concat(pack);
-    localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
+//     // mtn changes to save to local storage -->
+//     const currentUser = localStorage.getItem('current_user');
+//     const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
+//     const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
+//     const updatedCards = existingCards.concat(pack);
+//     localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
     
-    // end of changes -->
+//     // end of changes -->
   
-    openedPackContainer.innerHTML = ""
-    packStoreContainer.classList.remove("hide")
+//     openedPackContainer.innerHTML = ""
+//     packStoreContainer.classList.remove("hide")
 
 }
  function openAlbum(e){

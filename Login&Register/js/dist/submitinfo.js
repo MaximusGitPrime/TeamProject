@@ -31,6 +31,7 @@ regForm.addEventListener('submit', function (event) {
     }
     else {
         localStorage.setItem(username, password);
+        localStorage.setItem(username + '.coins', 10000);
         alert('User registered successfully!');
     }
 });
