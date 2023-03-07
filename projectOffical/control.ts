@@ -4,6 +4,7 @@ const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
 const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
+const pricingTable  = document.querySelector(".pricing-table-container") as HTMLDivElement;
 const openAlbumBtn = document.querySelector(".albumBtn")  as HTMLDivElement;
 const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
 
@@ -69,6 +70,10 @@ function displayPack(pack: Card[]) {
       
     } else {
       alert('You do not have enough coins to purchase this pack.');
+      packStoreContainer.classList.add("hide");
+      albumContainer.classList.add("hide");
+      openedPackContainer.classList.add("hide");
+      pricingTable.classList.remove("hide");
     }
   });
     

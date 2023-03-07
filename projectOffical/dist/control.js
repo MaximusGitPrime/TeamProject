@@ -4,6 +4,7 @@ var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
 var sendToAlbumBtn = document.querySelector("#sendBtn");
+var pricingTable = document.querySelector(".pricing-table-container");
 var openAlbumBtn = document.querySelector(".albumBtn");
 var albumContainer = document.querySelector(".albumContainer");
 function displayPack(pack) {
@@ -55,6 +56,10 @@ bronzePack.addEventListener("click", function () {
     }
     else {
         alert('You do not have enough coins to purchase this pack.');
+        packStoreContainer.classList.add("hide");
+        albumContainer.classList.add("hide");
+        openedPackContainer.classList.add("hide");
+        pricingTable.classList.remove("hide");
     }
 });
 silverPack.addEventListener("click", function () {
