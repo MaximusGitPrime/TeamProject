@@ -173,11 +173,11 @@ aside {
       padding-bottom: 30px;
       border-bottom: 1px solid #868282a9;
       text-align: center; }
-      aside .side-inner .counter div .number {
+      aside .side-inner .counter div .news_updates {
         display: block;
         font-size: 20px;
         color: #000000; }
-      aside .side-inner .counter div .number-label {
+      aside .side-inner .counter div .news_updates-label {
         color: #757575; }
     aside .side-inner .nav-menu ul, aside .side-inner .nav-menu ul li {
       padding: 0;
