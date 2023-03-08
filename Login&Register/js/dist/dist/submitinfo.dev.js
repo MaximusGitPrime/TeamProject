@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', function (event) {
   var password = loginPasswordInput.value;
 
   if (localStorage.getItem(username) === password) {
-    alert('Login successful!');
+    // alert('Login successful!');
     localStorage.setItem('current_user', username);
     hidefx.style.display = "none";
     document.querySelector(".loader").style.display = "block";
@@ -21,7 +21,11 @@ loginForm.addEventListener('submit', function (event) {
       window.location.href = "../projectOffical/index.html";
     }, 3000);
   } else {
-    alert('Username or password is incorrect.');
+    swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Username or password is incorrect.'
+    });
   }
 });
 regForm.addEventListener('submit', function (event) {
@@ -30,10 +34,18 @@ regForm.addEventListener('submit', function (event) {
   var password = regPasswordInput.value;
 
   if (localStorage.getItem(username)) {
-    alert('Username already exists.');
+    swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Username already exists.'
+    });
   } else {
     localStorage.setItem(username, password);
     localStorage.setItem(username + '.coins', 10000);
-    alert('User registered successfully!');
+    swal.fire({
+      icon: 'success',
+      title: 'Success!',
+      text: 'User registered successfully!'
+    });
   }
 });

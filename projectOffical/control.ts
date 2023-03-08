@@ -69,9 +69,15 @@ function displayPack(pack: Card[]) {
       });
       
     } else {
-      alert('You do not have enough coins to purchase this pack.');
-      packStoreContainer.classList.add("hide");
-      pricingTable.classList.remove("hide")
+      Swal.fire({
+        title: "Not enough coins!",
+        text: "You do not have enough coins to purchase this pack.",
+        icon: "error",
+        button: "OK",
+      }).then(() => {
+        packStoreContainer.classList.add("hide");
+        pricingTable.classList.remove("hide")
+      });
     }
   });
     
@@ -105,7 +111,15 @@ silverPack.addEventListener("click", () => {
     });
     
   } else {
-    alert('You do not have enough coins to purchase this pack.');
+    Swal.fire({
+      title: "Not enough coins!",
+      text: "You do not have enough coins to purchase this pack.",
+      icon: "error",
+      button: "OK",
+    }).then(() => {
+      packStoreContainer.classList.add("hide");
+      pricingTable.classList.remove("hide")
+    });
   }
 });
 
@@ -137,7 +151,15 @@ goldPack.addEventListener("click", () => {
     });
     
   } else {
-    alert('You do not have enough coins to purchase this pack.');
+    Swal.fire({
+      title: "Not enough coins!",
+      text: "You do not have enough coins to purchase this pack.",
+      icon: "error",
+      button: "OK",
+    }).then(() => {
+      packStoreContainer.classList.add("hide");
+      pricingTable.classList.remove("hide")
+    });
   }
 });
 
@@ -202,7 +224,21 @@ function generatePack(cards: Card[], packType: string): Card[] {
 //     openedPackContainer.innerHTML = ""
 //     packStoreContainer.classList.remove("hide")
 
+
+function buyCoins(amount) {
+  const currentUser = localStorage.getItem('current_user');
+  const currentCoins = parseInt(localStorage.getItem(`${currentUser}.coins`)) || 0;
+  const newCoins = currentCoins + amount;
+  localStorage.setItem(`${currentUser}.coins`, newCoins);
+  Swal.fire({
+    title: 'Purchase Successful!',
+    text: `You have successfully purchased ${amount} coins!`,
+    icon: 'success',
+    confirmButtonText: 'OK'
+  });
 }
+  }
+
  function openAlbum(e){
   e.preventDefault()
   console.log("openAlbum function activated");
@@ -220,4 +256,6 @@ function generatePack(cards: Card[], packType: string): Card[] {
   }
   
  }
+
+
 //heaara

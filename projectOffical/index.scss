@@ -187,9 +187,6 @@ header{
     }
   }
 
-  .h4-buycoins{
-    color: white;
-  }
   
   .price-table-wrapper{
     font-family: 'Lato', sans-serif;
@@ -275,6 +272,7 @@ header{
         box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
         
         .pricing-table__button{
+          cursor: pointer;
           padding-left: 0;
           padding-right: 35px;
          &:before{
@@ -290,6 +288,9 @@ header{
       }
     }
   }
+
+
+
 
   @media only screen and (max-width: 768px) {
     .buycoins h1, .price-table-wrapper, .price-table-wrapper, .pricing-table,  {

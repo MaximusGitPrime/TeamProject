@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./dist/index.css">
     <link rel="stylesheet" href="./dist/packStore.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+    <script src="./js/sweetalert2.min.js"></script>
     <script src="./dist/view.js"></script>
     <script src="./dist/model.js" defer></script>
     <script src="./dist/helpers.js" defer></script>
@@ -114,33 +116,32 @@
             <span>You need to buy more coins in order to play</span>
           </h1>
         </div>
-        <h4 class="h4-buycoins">You need to purchase more coins in order to keep playing:</h4>
         <div class="pricing-table">
           <h2 class="pricing-table__header">- 1000 Coins -</h2>
           <h3 class="pricing-table__price">₪9.99</h3>
-          <a target="_blank" class="pricing-table__button" href="#">
-            Buy Now!
+          <a class="pricing-table__button" onclick="buyCoins(1000)">
+            Buy Now
           </a>
         </div>
         <div class="pricing-table">
           <h2 class="pricing-table__header">- 
             3500 Coins-</h2>
           <h3 class="pricing-table__price">₪29.99</h3>
-          <a target="_blank" class="pricing-table__button" href="#">
-            Buy Now!
+          <a class="pricing-table__button" onclick="buyCoins(3500)">
+            Buy Now
           </a>
         </div>
         <div class="pricing-table">
           <h2 class="pricing-table__header">- 7500 Coins -</h2>
           <h3 class="pricing-table__price">₪59.99</h3>
-          <a target="_blank" class="pricing-table__button" href="#">
-            Buy Now!
+          <a class="pricing-table__button" onclick="buyCoins(7500)">
+            Buy Now
           </a>
         </div>
       </div>
 
-
     </div>
+
       
     <div class="openedPackContainer">
             <button id="sendBtn" class="hide"onclick="handleBackToPacksStore(event)">Send to Album</button>
