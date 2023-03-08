@@ -123,85 +123,120 @@ header{
   }
 
 
-
-  .pricing-table{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: min(1600px, 100%);
-    margin: auto;
-  }
+  // a{
+  //   text-decoration: none;
+  // }
   
-  .pricing-card{
-    flex: 1;
-    max-width: 360px;
-    background-color: #fff;
-    margin: 20px 10px;
-    text-align: center;
-    cursor: pointer;
-    overflow: hidden;
-    color: #2d2d2d;
-    transition: .3s linear;
-  }
+  // h1{
+  //   text-align: center;
+  //   font-family: 'Lato', sans-serif;
+  //   font-size: 25px;
+  //   line-height: 32px;
+  //   padding-top: 70px;
+  //   a{
+  //     color: #66CCCC;
+  //   }
+  // }
   
-  .pricing-card-header{
-    background-color: #0fbcf9;
-    display: inline-block;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 0 0 20px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: .4s linear;
-  }
-  
-  .pricing-card:hover .pricing-card-header{
-    box-shadow: 0 0 0 26em #0fbcf9;
-  }
-  
-  .price{
-    font-size: 70px;
-    color: #0fbcf9;
-    margin: 40px 0;
-    transition: .2s linear;
-  }
-  
-  .price sup, .price span{
-    font-size: 22px;
-    font-weight: 700;
-  }
-  
-  .pricing-card:hover ,.pricing-card:hover .price{
-    color: #fff;
-  }
-  
-  .pricing-card li{
-    font-size: 16px;
-    padding: 10px 0;
-    text-transform: uppercase;
-  }
-  
-  .order-btn{
-    display: inline-block;
-    margin-bottom: 40px;
-    margin-top: 80px;
-    border: 2px solid #0fbcf9;
-    color: #0fbcf9;
-    padding: 18px 40px;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: .3s linear;
-  }
-  
-  .order-btn:hover{
-    background-color: #0fbcf9;
-    color: #fff;
-  }
-  
-  @media screen and (max-width:1100px){
-    .pricing-card{
-      flex: 50%;
-    }
-  }
+  // .price-table-wrapper{
+  //   font-family: 'Lato', sans-serif;
+  //   text-align: center;
+  //   margin-top: 30px;
+    
+  //   .featured-table{
+  //     box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
+  //   }
+    
+  //   .pricing-table{
+  //     display: inline-block;
+  //     border: 1px solid #C8C8C8;
+  //     border-radius: 10px;
+  //     background: white;
+  //     margin: 20px;
+  //     transition: all 0.3s ease-in-out;
+      
+  //     &__header{
+  //       padding: 20px;
+  //       font-size: 20px;
+  //       color: #909090 ;
+  //       background: #E0E0E0;
+  //     }
+  //     &__price{
+  //       color: #66CCCC;
+  //       padding: 20px;
+  //       margin: auto;
+  //       font-size: 40px;
+  //       font-weight: 500;
+  //     }
+  //     &__button{
+  //       display: block;
+  //       background: #66CCCC;
+  //       text-decoration: none;
+  //       padding: 20px;
+  //       color: white;
+  //       position: relative;
+  //       overflow: hidden;
+  //       transition: all 0.3s ease-in-out;
+        
+  //       &:before{
+  //         position: absolute;
+  //         left: -20%;
+  //         top: -10%;
+  //         content: '';
+  //         width: 60%;
+  //         height: 220%;
+  //         transform: rotate(-30deg);
+  //         background: white;
+  //         opacity: .3;
+  //         transition: all 0.3s ease-in-out;
+  //       }
+        
+  //        &:after{
+  //           position: absolute;
+  //           content: '>';
+  //           top: 0;
+  //           right: 0;
+  //           font-size: 25px;
+  //           padding: 15px;
+  //           padding-right: 40px;
+  //           color: white;
+  //           opacity: 0;
+  //          transition: all 0.3s ease-in-out;
+  //         }
+        
+  //       &:hover{
+  //         background: black;
+  //       }
+  //     }
+  //     &__list{
+  //       padding: 20px;
+  //       color: #A0A0A0;
+  //       li{
+  //         padding: 15px;
+  //         border-bottom: 1px solid #C8C8C8 ;
+          
+  //         &:last-child{
+  //           border: none;
+  //         }
+  //       }
+  //     }
+      
+  //     &:hover{
+  //       box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
+        
+  //       .pricing-table__button{
+  //         padding-left: 0;
+  //         padding-right: 35px;
+  //        &:before{
+  //           top: -80%;
+  //           transform: rotate(0deg);
+  //           width: 100%;
+  //         }
+  //         &:after{
+  //           opacity: 1;
+  //           padding-right: 15px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }

@@ -4,7 +4,7 @@ const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
 const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
 const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
 const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
-const pricingTable  = document.querySelector(".pricing-table-container") as HTMLDivElement;
+const pricingTable  = document.querySelector(".buycoins-co") as HTMLDivElement;
 const openAlbumBtn = document.querySelector(".albumBtn")  as HTMLDivElement;
 const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
 

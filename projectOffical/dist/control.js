@@ -4,7 +4,7 @@ var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
 var sendToAlbumBtn = document.querySelector("#sendBtn");
-var pricingTable = document.querySelector(".pricing-table-container");
+var pricingTable = document.querySelector(".buycoins-co");
 var openAlbumBtn = document.querySelector(".albumBtn");
 var albumContainer = document.querySelector(".albumContainer");
 function displayPack(pack) {
