@@ -6,6 +6,7 @@ var bronzePack = document.querySelector(".bronzePack");
 var silverPack = document.querySelector(".silverPack");
 var goldPack = document.querySelector(".goldPack");
 var sendToAlbumBtn = document.querySelector("#sendBtn");
+var pricingTable = document.querySelector(".buycoins-co");
 var openAlbumBtn = document.querySelector(".albumBtn");
 var albumContainer = document.querySelector(".albumContainer");
 
@@ -59,9 +60,14 @@ bronzePack.addEventListener("click", function () {
       sendToAlbumBtn.classList.add("hide");
       openedPackContainer.innerHTML = "";
       packStoreContainer.classList.remove("hide");
+      pack_2 = [];
+      count = 0;
     });
   } else {
     alert('You do not have enough coins to purchase this pack.');
+    packStoreContainer.classList.add("hide");
+    albumContainer.classList.add("hide");
+    openedPackContainer.classList.add("hide");
   }
 });
 silverPack.addEventListener("click", function () {
@@ -85,6 +91,8 @@ silverPack.addEventListener("click", function () {
       sendToAlbumBtn.classList.add("hide");
       openedPackContainer.innerHTML = "";
       packStoreContainer.classList.remove("hide");
+      pack_3 = [];
+      count = 0;
     });
   } else {
     alert('You do not have enough coins to purchase this pack.');
@@ -111,6 +119,8 @@ goldPack.addEventListener("click", function () {
       sendToAlbumBtn.classList.add("hide");
       openedPackContainer.innerHTML = "";
       packStoreContainer.classList.remove("hide");
+      pack_4 = [];
+      count = 0;
     });
   } else {
     alert('You do not have enough coins to purchase this pack.');

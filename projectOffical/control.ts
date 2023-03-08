@@ -71,9 +71,7 @@ function displayPack(pack: Card[]) {
     } else {
       alert('You do not have enough coins to purchase this pack.');
       packStoreContainer.classList.add("hide");
-      albumContainer.classList.add("hide");
-      openedPackContainer.classList.add("hide");
-      pricingTable.classList.remove("hide");
+      pricingTable.classList.remove("hide")
     }
   });
     

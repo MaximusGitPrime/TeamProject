@@ -122,121 +122,215 @@ header{
     color: rgb(0, 0, 0);
   }
 
+  .buycoins-head {
+    position: relative;
+    background: #f8f8f84f;
+    width: 90%;
+    max-width: 500px;
+    padding: 2em;
+    margin: 1.5em auto;
+    border: 3px solid #55719956;
+  }
+  
+  h1:before,
+  h1:after {
+    background-color: #55719956;
+  }
+  
 
-  // a{
-  //   text-decoration: none;
-  // }
+  .buycoins-head h1 {
+    text-transform: capitalize;
+    color: white;
+  }
+  .buycoins-head h1:before {
+    position: absolute;
+    color: white;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+    content: "";
+    background-color: #55719956;
+  }
   
-  // h1{
-  //   text-align: center;
-  //   font-family: 'Lato', sans-serif;
-  //   font-size: 25px;
-  //   line-height: 32px;
-  //   padding-top: 70px;
-  //   a{
-  //     color: #66CCCC;
-  //   }
-  // }
+  .buycoins-head h1 span {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 3em;
+    padding-left: 0.25em;
+    color: rgba(0, 0, 0, 0.4);
+    padding-bottom: 10px;
+  }
+
+  .alt-buycoins-head h1 {
+    text-align:center;
+  }
+  .alt-buycoins-head h1:before {
+    left:50%; margin-left:-30px;
+  }
+
+
+  .buycoins a{
+    text-decoration: none;
+  }
   
-  // .price-table-wrapper{
-  //   font-family: 'Lato', sans-serif;
-  //   text-align: center;
-  //   margin-top: 30px;
+  .buycoins h1{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    line-height: 32px;
+    padding-top: 70px;
+    a{
+      color: #66CCCC;
+    }
+  }
+
+  .h4-buycoins{
+    color: white;
+  }
+  
+  .price-table-wrapper{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 30px;
     
-  //   .featured-table{
-  //     box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
-  //   }
     
-  //   .pricing-table{
-  //     display: inline-block;
-  //     border: 1px solid #C8C8C8;
-  //     border-radius: 10px;
-  //     background: white;
-  //     margin: 20px;
-  //     transition: all 0.3s ease-in-out;
+    .pricing-table{
+      display: inline-block;
+      border: 1px solid #C8C8C8;
+      border-radius: 10px;
+      background: #e9eef5a2;
+      margin: 20px;
+      transition: all 0.3s ease-in-out;
       
-  //     &__header{
-  //       padding: 20px;
-  //       font-size: 20px;
-  //       color: #909090 ;
-  //       background: #E0E0E0;
-  //     }
-  //     &__price{
-  //       color: #66CCCC;
-  //       padding: 20px;
-  //       margin: auto;
-  //       font-size: 40px;
-  //       font-weight: 500;
-  //     }
-  //     &__button{
-  //       display: block;
-  //       background: #66CCCC;
-  //       text-decoration: none;
-  //       padding: 20px;
-  //       color: white;
-  //       position: relative;
-  //       overflow: hidden;
-  //       transition: all 0.3s ease-in-out;
+      &__header{
+        padding: 20px;
+        font-size: 20px;
+        color: #909090 ;
+        background: #E0E0E0;
+      }
+      &__price{
+        color: #557199a2;
+        padding: 20px;
+        margin: auto;
+        font-size: 40px;
+        font-weight: 500;
+      }
+      &__button{
+        display: block;
+        background: #557199a2;
+        text-decoration: none;
+        padding: 20px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
         
-  //       &:before{
-  //         position: absolute;
-  //         left: -20%;
-  //         top: -10%;
-  //         content: '';
-  //         width: 60%;
-  //         height: 220%;
-  //         transform: rotate(-30deg);
-  //         background: white;
-  //         opacity: .3;
-  //         transition: all 0.3s ease-in-out;
-  //       }
+        &:before{
+          position: absolute;
+          left: -20%;
+          top: -10%;
+          content: '';
+          width: 60%;
+          height: 220%;
+          transform: rotate(-30deg);
+          background: white;
+          opacity: .3;
+          transition: all 0.3s ease-in-out;
+        }
         
-  //        &:after{
-  //           position: absolute;
-  //           content: '>';
-  //           top: 0;
-  //           right: 0;
-  //           font-size: 25px;
-  //           padding: 15px;
-  //           padding-right: 40px;
-  //           color: white;
-  //           opacity: 0;
-  //          transition: all 0.3s ease-in-out;
-  //         }
+         &:after{
+            position: absolute;
+            content: '>';
+            top: 0;
+            right: 0;
+            font-size: 25px;
+            padding: 15px;
+            padding-right: 40px;
+            color: white;
+            opacity: 0;
+           transition: all 0.3s ease-in-out;
+          }
         
-  //       &:hover{
-  //         background: black;
-  //       }
-  //     }
-  //     &__list{
-  //       padding: 20px;
-  //       color: #A0A0A0;
-  //       li{
-  //         padding: 15px;
-  //         border-bottom: 1px solid #C8C8C8 ;
+        &:hover{
+          background: #557199a2;
+        }
+      }
+      &__list{
+        padding: 20px;
+        color: #A0A0A0;
+        li{
+          padding: 15px;
+          border-bottom: 1px solid #C8C8C8 ;
           
-  //         &:last-child{
-  //           border: none;
-  //         }
-  //       }
-  //     }
+          &:last-child{
+            border: none;
+          }
+        }
+      }
       
-  //     &:hover{
-  //       box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
+      &:hover{
+        box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.36);
         
-  //       .pricing-table__button{
-  //         padding-left: 0;
-  //         padding-right: 35px;
-  //        &:before{
-  //           top: -80%;
-  //           transform: rotate(0deg);
-  //           width: 100%;
-  //         }
-  //         &:after{
-  //           opacity: 1;
-  //           padding-right: 15px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+        .pricing-table__button{
+          padding-left: 0;
+          padding-right: 35px;
+         &:before{
+            top: -80%;
+            transform: rotate(0deg);
+            width: 100%;
+          }
+          &:after{
+            opacity: 1;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .buycoins h1, .price-table-wrapper, .price-table-wrapper, .pricing-table,  {
+
+    }
+  
+    .price-table-wrapper {
+      margin-top: 20px;
+      display: flex;
+    }
+  
+    .pricing-table {
+      width: 50%;
+      margin: 10px auto;
+      display: block;
+  
+      &__header {
+        font-size: 18px;
+      }
+  
+      &__price {
+        font-size: 30px;
+      }
+  
+      &__button {
+        padding: 15px;
+        &:before {
+          left: -50%;
+          top: -10%;
+          width: 200%;
+          height: 220%;
+        }
+        &:after {
+          padding: 10px;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+  
