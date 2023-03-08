@@ -7,6 +7,7 @@ const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
 const pricingTable  = document.querySelector(".buycoins-co") as HTMLDivElement;
 const openAlbumBtn = document.querySelector(".albumBtn")  as HTMLDivElement;
 const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
+const TopUpBtn = document.querySelector(".top-up-coins") as HTMLDivElement;
 
 
 function displayPack(pack: Card[]) {
@@ -224,6 +225,11 @@ function generatePack(cards: Card[], packType: string): Card[] {
 //     openedPackContainer.innerHTML = ""
 //     packStoreContainer.classList.remove("hide")
 
+TopUpBtn.addEventListener("click", () => {
+  packStoreContainer.classList.add("hide");
+  pricingTable.classList.remove("hide");
+});
+
 
 function buyCoins(amount) {
   const currentUser = localStorage.getItem('current_user');
@@ -239,23 +245,23 @@ function buyCoins(amount) {
 }
   }
 
- function openAlbum(e){
-  e.preventDefault()
-  console.log("openAlbum function activated");
+//  function openAlbum(e){
+//   e.preventDefault()
+//   console.log("openAlbum function activated");
 
-  if(packStoreContainer.classList.contains("hide") &&  albumContainer.classList.contains("hide") ){
-    alert("First Send your cards to Album")
-  }
-  else{
-    packStoreContainer.classList.add("hide")
-    albumContainer.classList.remove("hide")
-  }
+//   if(packStoreContainer.classList.contains("hide") &&  albumContainer.classList.contains("hide") ){
+//     alert("First Send your cards to Album")
+//   }
+//   else{
+//     packStoreContainer.classList.add("hide")
+//     albumContainer.classList.remove("hide")
+//   }
   
- if (!albumContainer.classList.contains("hide")){
-  openAlbumBtn.onclick = null
-  }
+//  if (!albumContainer.classList.contains("hide")){
+//   openAlbumBtn.onclick = null
+//   }
   
- }
+//  }
 
 
 //heaara

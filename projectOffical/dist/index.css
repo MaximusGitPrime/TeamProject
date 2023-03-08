@@ -104,6 +104,15 @@ nav .albumBtn {
   padding: 5px;
 }
 
+.top-up-coins {
+  font-size: 14px;
+}
+
+.top-up-coins:hover {
+  cursor: pointer;
+  color: #557199;
+}
+
 .bronzePack p {
   color: black;
 }

@@ -7,6 +7,7 @@ var sendToAlbumBtn = document.querySelector("#sendBtn");
 var pricingTable = document.querySelector(".buycoins-co");
 var openAlbumBtn = document.querySelector(".albumBtn");
 var albumContainer = document.querySelector(".albumContainer");
+var TopUpBtn = document.querySelector(".top-up-coins");
 function displayPack(pack) {
     var count = 0;
     var _loop_1 = function (card) {
@@ -187,6 +188,10 @@ function generatePack(cards, packType) {
 //     // end of changes -->
 //     openedPackContainer.innerHTML = ""
 //     packStoreContainer.classList.remove("hide")
+TopUpBtn.addEventListener("click", function () {
+    packStoreContainer.classList.add("hide");
+    pricingTable.classList.remove("hide");
+});
 function buyCoins(amount) {
     var currentUser = localStorage.getItem('current_user');
     var currentCoins = parseInt(localStorage.getItem(currentUser + ".coins")) || 0;
@@ -199,18 +204,18 @@ function buyCoins(amount) {
         confirmButtonText: 'OK'
     });
 }
-function openAlbum(e) {
-    e.preventDefault();
-    console.log("openAlbum function activated");
-    if (packStoreContainer.classList.contains("hide") && albumContainer.classList.contains("hide")) {
-        alert("First Send your cards to Album");
-    }
-    else {
-        packStoreContainer.classList.add("hide");
-        albumContainer.classList.remove("hide");
-    }
-    if (!albumContainer.classList.contains("hide")) {
-        openAlbumBtn.onclick = null;
-    }
-}
+//  function openAlbum(e){
+//   e.preventDefault()
+//   console.log("openAlbum function activated");
+//   if(packStoreContainer.classList.contains("hide") &&  albumContainer.classList.contains("hide") ){
+//     alert("First Send your cards to Album")
+//   }
+//   else{
+//     packStoreContainer.classList.add("hide")
+//     albumContainer.classList.remove("hide")
+//   }
+//  if (!albumContainer.classList.contains("hide")){
+//   openAlbumBtn.onclick = null
+//   }
+//  }
 //heaara
