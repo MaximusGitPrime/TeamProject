@@ -89,6 +89,10 @@ nav .albumBtn {
   transform: rotateY(180deg);
 }
 
+#logout-button {
+  cursor: pointer;
+}
+
 .hide {
   display: none;
 }
