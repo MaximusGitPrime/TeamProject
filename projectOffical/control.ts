@@ -235,18 +235,30 @@ function buyCoins(amount) {
 
 
 
-    if(albumContainer.classList.contains("hide") && !packStoreContainer.classList.contains("hide")){
-      menuAlbumBtn.addEventListener("click" , ()=>{
+    
+      goToAlbumBtn.addEventListener("click" , ()=>{
+        if(openedPackContainer.classList.contains("hide")){
         albumContainer.classList.remove("hide")
         packStoreContainer.classList.add("hide")
+        }else{
+          alert("You need to send your cards to album first")
+        }
       })
-    }else if(albumContainer.classList.contains("hide") && packStoreContainer.classList.contains("hide")){
-      menuAlbumBtn.addEventListener("click" , ()=>{
-        console.log("sadf");
-        
-      })
-    }
+    
 
+      goToStoreBtn.addEventListener("click" , ()=>{
+          if(openedPackContainer.classList.contains("hide")){
+            albumContainer.classList.add("hide")
+            packStoreContainer.classList.remove("hide")
+          }else{
+            alert("You need to send your cards to album first")
+          }
+      })
+    
+  
+
+
+    
 
 
 //heaara

@@ -195,15 +195,22 @@ function buyCoins(amount) {
         confirmButtonText: 'OK'
     });
 }
-if (albumContainer.classList.contains("hide") && !packStoreContainer.classList.contains("hide")) {
-    menuAlbumBtn.addEventListener("click", function () {
+goToAlbumBtn.addEventListener("click", function () {
+    if (openedPackContainer.classList.contains("hide")) {
         albumContainer.classList.remove("hide");
         packStoreContainer.classList.add("hide");
-    });
-}
-else if (albumContainer.classList.contains("hide") && packStoreContainer.classList.contains("hide")) {
-    menuAlbumBtn.addEventListener("click", function () {
-        console.log("sadf");
-    });
-}
+    }
+    else {
+        alert("You need to send your cards to album first");
+    }
+});
+goToStoreBtn.addEventListener("click", function () {
+    if (openedPackContainer.classList.contains("hide")) {
+        albumContainer.classList.add("hide");
+        packStoreContainer.classList.remove("hide");
+    }
+    else {
+        alert("You need to send your cards to album first");
+    }
+});
 //heaara
