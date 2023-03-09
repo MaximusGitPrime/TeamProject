@@ -38,7 +38,12 @@
                 <h3 class="name">$username</h3>
                 <span class="coins">Coins: $coinsnum</span>
                 <br>
-                <span class="top-up-coins">Top up</span>
+                <span class="top-up-coins" id="buyCoins">Buy Coins</span>
+                <br>
+                <span class="top-up-coins" id="goToStoreBtn">Store</span>
+                <br>
+                <span class="top-up-coins" id="goToAlbumBtn">My Album</span>
+
               </div>
               <script src="./js/info.js"></script>
               <input type="file" id="profile-upload" accept="image/*" style="display: none;">
@@ -47,7 +52,7 @@
                 <div class="row justify-content-center">
                     <div class="col">
                       <strong class="news_updates">News & Updates</strong>
-                      <span class="news_updates-label">Lorem ipsum dolor sit amet.</span>
+                      <span class="news_updates-label">Open more packs to fill out the album and become a premium collector !</span>
                     </div>
                   </div>
               </div>
@@ -74,11 +79,6 @@
           <script src="./vaildate.js"></script>
 
     </header>
-    <nav>
-      <div class="storeBtn">Store</div>
-      <div class="albumBtn">Album</div>
-    </div>
-    </nav>
     <div class="packStoreContainer">
         <div class="bronzePack">
             <img class="pack" src="./projectPhotos/packsDesign/bronze.PNG">
@@ -145,12 +145,12 @@
 
 
       
-    <div class="openedPackContainer">
+   
             <button id="sendBtn" class="hide">Send to Album</button>
        
             
         <div class="packdCardContainer hide"></div>
-    </div>
+  
 
     <div class="albumContainer hide">
 
