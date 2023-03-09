@@ -51,6 +51,7 @@ function displayPack(pack: Card[]) {
         const updatedCards = existingCards.concat(pack);
         localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
         sendToAlbumBtn.classList.add("hide");
+        openedPackContainer.classList.add("hide");
         openedPackContainer.innerHTML = "";
         packStoreContainer.classList.remove("hide");
         pack = [];

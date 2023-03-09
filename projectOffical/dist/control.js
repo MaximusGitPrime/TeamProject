@@ -39,6 +39,7 @@ bronzePack.addEventListener("click", function () {
             var updatedCards = existingCards.concat(pack_2);
             localStorage.setItem(currentUser + ".cards", JSON.stringify(updatedCards));
             sendToAlbumBtn.classList.add("hide");
+            openedPackContainer.classList.add("hide");
             openedPackContainer.innerHTML = "";
             packStoreContainer.classList.remove("hide");
             pack_2 = [];
