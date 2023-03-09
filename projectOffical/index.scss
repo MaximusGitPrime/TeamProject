@@ -349,29 +349,22 @@ header{
   }
   
   
-  // .albumContainer{
-  //   display: flex;
-  //   width: 100%;
-  //   height: 100%;
-  //   align-items: center;
-  //   justify-content: center;
-  //   flex-wrap: wrap;
-  //   gap: 1rem;
-  // }
+  
   
   .albumContainer {
-    min-width: 100%;
-    margin: auto;
-    border: 10px solid white;
+    height: 69vh;
+    overflow: auto;
+    margin: 30px;
+    border: 5px solid white;
     border-radius: 10px;
     display: grid;
     gap: 3px;
     grid-template-columns: repeat(auto-fit , minmax(193px , 193px));
-    
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     .container__card {
+      margin-top: 5px;
       align-items: center;
       max-width: 193px;
       max-height: 270px;
