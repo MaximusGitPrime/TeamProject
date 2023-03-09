@@ -1,3 +1,13 @@
+var openedPackContainer = document.querySelector(".packdCardContainer");
+var packStoreContainer = document.querySelector(".packStoreContainer");
+var bronzePack = document.querySelector(".bronzePack");
+var silverPack = document.querySelector(".silverPack");
+var goldPack = document.querySelector(".goldPack");
+var sendToAlbumBtn = document.querySelector("#sendBtn");
+var pricingTable = document.querySelector(".buycoins-co");
+var menuAlbumBtn = document.querySelector(".albumBtn");
+var albumContainer = document.querySelector(".albumContainer");
+var TopUpBtn = document.querySelector(".top-up-coins");
 var Card = /** @class */ (function () {
     function Card(cardId, cardFace, cardType) {
         this.cardId = cardId;

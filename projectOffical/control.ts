@@ -1,15 +1,3 @@
-const openedPackContainer = document.querySelector(".packdCardContainer") as HTMLDivElement
-const packStoreContainer = document.querySelector(".packStoreContainer") as HTMLDivElement;
-const bronzePack = document.querySelector(".bronzePack") as HTMLDivElement;
-const silverPack = document.querySelector(".silverPack") as HTMLDivElement;
-const goldPack = document.querySelector(".goldPack") as HTMLDivElement;
-const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
-const pricingTable  = document.querySelector(".buycoins-co") as HTMLDivElement;
-const openAlbumBtn = document.querySelector(".albumBtn")  as HTMLDivElement;
-const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
-const TopUpBtn = document.querySelector(".top-up-coins") as HTMLDivElement;
-
-
 function displayPack(pack: Card[]) {
   let count = 0
     for (const card of pack) {
@@ -243,25 +231,21 @@ function buyCoins(amount) {
     confirmButtonText: 'OK'
   });
 }
-  }
 
-//  function openAlbum(e){
-//   e.preventDefault()
-//   console.log("openAlbum function activated");
 
-//   if(packStoreContainer.classList.contains("hide") &&  albumContainer.classList.contains("hide") ){
-//     alert("First Send your cards to Album")
-//   }
-//   else{
-//     packStoreContainer.classList.add("hide")
-//     albumContainer.classList.remove("hide")
-//   }
-  
-//  if (!albumContainer.classList.contains("hide")){
-//   openAlbumBtn.onclick = null
-//   }
-  
-//  }
+
+    if(albumContainer.classList.contains("hide") && !packStoreContainer.classList.contains("hide")){
+      menuAlbumBtn.addEventListener("click" , ()=>{
+        albumContainer.classList.remove("hide")
+        packStoreContainer.classList.add("hide")
+      })
+    }else if(albumContainer.classList.contains("hide") && packStoreContainer.classList.contains("hide")){
+      menuAlbumBtn.addEventListener("click" , ()=>{
+        console.log("sadf");
+        
+      })
+    }
+
 
 
 //heaara
