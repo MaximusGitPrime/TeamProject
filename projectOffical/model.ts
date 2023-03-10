@@ -7,7 +7,7 @@ const sendToAlbumBtn  = document.querySelector("#sendBtn") as HTMLDivElement;
 const pricingTable  = document.querySelector(".buycoins-co") as HTMLDivElement;
 const goToAlbumBtn = document.querySelector("#goToAlbumBtn") as HTMLSpanElement
 const albumContainer = document.querySelector(".albumContainer") as HTMLDivElement;
-const TopUpBtn = document.querySelector(".top-up-coins") as HTMLDivElement;
+const TopUpBtn = document.querySelector("#TopUpBtn") as HTMLDivElement;
 const goToStoreBtn = document.querySelector("#goToStoreBtn") as HTMLSpanElement
 
 

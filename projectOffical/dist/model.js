@@ -7,7 +7,7 @@ var sendToAlbumBtn = document.querySelector("#sendBtn");
 var pricingTable = document.querySelector(".buycoins-co");
 var goToAlbumBtn = document.querySelector("#goToAlbumBtn");
 var albumContainer = document.querySelector(".albumContainer");
-var TopUpBtn = document.querySelector(".top-up-coins");
+var TopUpBtn = document.querySelector("#TopUpBtn");
 var goToStoreBtn = document.querySelector("#goToStoreBtn");
 var Card = /** @class */ (function () {
     function Card(cardId, cardFace, cardType) {
