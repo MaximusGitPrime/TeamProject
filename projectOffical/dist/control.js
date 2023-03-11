@@ -45,15 +45,7 @@ bronzePack.addEventListener("click", function () {
         });
     }
     else {
-        Swal.fire({
-            title: "Not enough coins!",
-            text: "You do not have enough coins to purchase this pack.",
-            icon: "error",
-            button: "OK"
-        }).then(function () {
-            packStoreContainer.classList.add("hide");
-            pricingTable.classList.remove("hide");
-        });
+        handleNotEnoghCoins();
     }
 });
 silverPack.addEventListener("click", function () {
@@ -80,15 +72,7 @@ silverPack.addEventListener("click", function () {
         });
     }
     else {
-        Swal.fire({
-            title: "Not enough coins!",
-            text: "You do not have enough coins to purchase this pack.",
-            icon: "error",
-            button: "OK"
-        }).then(function () {
-            packStoreContainer.classList.add("hide");
-            pricingTable.classList.remove("hide");
-        });
+        handleNotEnoghCoins();
     }
 });
 goldPack.addEventListener("click", function () {
@@ -115,15 +99,7 @@ goldPack.addEventListener("click", function () {
         });
     }
     else {
-        Swal.fire({
-            title: "Not enough coins!",
-            text: "You do not have enough coins to purchase this pack.",
-            icon: "error",
-            button: "OK"
-        }).then(function () {
-            packStoreContainer.classList.add("hide");
-            pricingTable.classList.remove("hide");
-        });
+        handleNotEnoghCoins();
     }
 });
 function generatePack(cards, packType) {
@@ -162,23 +138,6 @@ function generatePack(cards, packType) {
     }
     return pack;
 }
-// function handleBackToPacksStore(e){
-//     e.preventDefault()
-//     sendToAlbumBtn.classList.add("hide")
-//     console.log("Send Button function activated");
-//     // mtn changes to save to local storage -->
-//     const currentUser = localStorage.getItem('current_user');
-//     const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
-//     const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
-//     const updatedCards = existingCards.concat(pack);
-//     localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
-//     // end of changes -->
-//     openedPackContainer.innerHTML = ""
-//     packStoreContainer.classList.remove("hide")
-TopUpBtn.addEventListener("click", function () {
-    packStoreContainer.classList.add("hide");
-    pricingTable.classList.remove("hide");
-});
 function buyCoins(amount) {
     var currentUser = localStorage.getItem('current_user');
     var currentCoins = parseInt(localStorage.getItem(currentUser + ".coins")) || 0;
@@ -191,9 +150,20 @@ function buyCoins(amount) {
         confirmButtonText: 'OK'
     });
 }
+TopUpBtn.addEventListener("click", function () {
+    if (openedPackContainer.classList.contains("hide")) {
+        packStoreContainer.classList.add("hide");
+        albumContainer.classList.add("hide");
+        pricingTable.classList.remove("hide");
+    }
+    else {
+        alert("You need to send your cards to album first");
+    }
+});
 goToAlbumBtn.addEventListener("click", function () {
     if (openedPackContainer.classList.contains("hide")) {
         albumContainer.classList.remove("hide");
+        pricingTable.classList.add("hide");
         packStoreContainer.classList.add("hide");
     }
     else {
@@ -202,12 +172,11 @@ goToAlbumBtn.addEventListener("click", function () {
 });
 goToStoreBtn.addEventListener("click", function () {
     if (openedPackContainer.classList.contains("hide")) {
-        albumContainer.classList.add("hide");
         packStoreContainer.classList.remove("hide");
+        albumContainer.classList.add("hide");
+        pricingTable.classList.add("hide");
     }
     else {
         alert("You need to send your cards to album first");
     }
 });
-//heaar
-console.log();

@@ -39,15 +39,18 @@
                 <h3 class="name">$username</h3>
                 <span class="coins">Coins: $coinsnum</span>
                 <br>
-                <!-- <span class="top-up-coins" id="buyCoins">Buy Coins</span>
-                <br>
-                <span class="top-up-coins" id="goToStoreBtn">Store</span>
-                <br>
-                <span class="top-up-coins" id="goToAlbumBtn">My Album</span> -->
-
               </div>
               <script src="./js/info.js"></script>
               <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+              <div class="nav-menu">
+                <ul>
+                  <li id="goToStoreBtn"><a><span class="icon-shopping-cart mr-2 goToStoreBtn"></span>Store</a></li>
+                  <li><a id="goToAlbumBtn"><span class="icon-album mr-2 goToStoreBtn"></span>Album</a></li>
+                  <li><a id="TopUpBtn"><span class="icon-viacoin mr-2"></span>Buy coins</a></li>
+                  <li id="logout-button"><a id="signOutBtn"><span class="icon-sign-out mr-2"></span>Sign out</a></li>
+                </ul>
+              </div>
+              <hr>
               <div class="counter d-flex justify-content-center">
                 <script src="./js/upload.js"></script>
                 <div class="row justify-content-center">
@@ -58,14 +61,6 @@
                   </div>
               </div>
               
-              <div class="nav-menu">
-                <ul>
-                  <li id="goToStoreBtn"><a><span class="icon-shopping-cart mr-2 goToStoreBtn"></span>Store</a></li>
-                  <li><a id="goToAlbumBtn"><span class="icon-album mr-2 goToStoreBtn"></span>Album</a></li>
-                  <li><a id="TopUpBtn"><span class="icon-viacoin mr-2"></span>Buy coins</a></li>
-                  <li id="logout-button"><a id="signOutBtn"><span class="icon-sign-out mr-2"></span>Sign out</a></li>
-                </ul>
-              </div>
               
             </div>
             
@@ -123,24 +118,23 @@
           </h1>
         </div>
         <div class="pricing-table">
-          <h2 class="pricing-table__header">- 1000 Coins -</h2>
+          <h2 class="pricing-table__header">7,500 Coins</h2>
           <h3 class="pricing-table__price">₪9.99</h3>
-          <a class="pricing-table__button" onclick="buyCoins(1000)">
-            Buy Now
-          </a>
-        </div>
-        <div class="pricing-table">
-          <h2 class="pricing-table__header">- 
-            3500 Coins-</h2>
-          <h3 class="pricing-table__price">₪29.99</h3>
-          <a class="pricing-table__button" onclick="buyCoins(3500)">
-            Buy Now
-          </a>
-        </div>
-        <div class="pricing-table">
-          <h2 class="pricing-table__header">- 7500 Coins -</h2>
-          <h3 class="pricing-table__price">₪59.99</h3>
           <a class="pricing-table__button" onclick="buyCoins(7500)">
+            Buy Now
+          </a>
+        </div>
+        <div class="pricing-table">
+          <h2 class="pricing-table__header">25,000 coins</h2>
+          <h3 class="pricing-table__price">₪29.99</h3>
+          <a class="pricing-table__button" onclick="buyCoins(25000)">
+            Buy Now
+          </a>
+        </div>
+        <div class="pricing-table">
+          <h2 class="pricing-table__header">50,000 Coins</h2>
+          <h3 class="pricing-table__price">₪59.99</h3>
+          <a class="pricing-table__button" onclick="buyCoins(50000)">
             Buy Now
           </a>
         </div>
