@@ -46,15 +46,13 @@ function displayPack(pack: Card[]) {
       displayPack(pack);
   
       sendToAlbumBtn.addEventListener("click", () => {
+        location.reload()
         const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
         const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
         const updatedCards = existingCards.concat(pack);
-        localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
-        sendToAlbumBtn.classList.add("hide");
-        openedPackContainer.classList.add("hide");
+        localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));       
         openedPackContainer.innerHTML = "";
-        packStoreContainer.classList.remove("hide");
-        pack = [];
+        pack = [];  
         count = 0;
       });
       
@@ -89,13 +87,12 @@ silverPack.addEventListener("click", () => {
 
 
     sendToAlbumBtn.addEventListener("click", () => {
+      location.reload()
       const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
       const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
       const updatedCards = existingCards.concat(pack);
       localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
-      sendToAlbumBtn.classList.add("hide");
       openedPackContainer.innerHTML = "";
-      packStoreContainer.classList.remove("hide");
       pack = [];
       count = 0;
     });
@@ -129,13 +126,12 @@ goldPack.addEventListener("click", () => {
     displayPack(pack);
 
     sendToAlbumBtn.addEventListener("click", () => {
+      location.reload()
       const existingCardsString = localStorage.getItem(`${currentUser}.cards`);
       const existingCards = existingCardsString ? JSON.parse(existingCardsString) : [];
       const updatedCards = existingCards.concat(pack);
       localStorage.setItem(`${currentUser}.cards`, JSON.stringify(updatedCards));
-      sendToAlbumBtn.classList.add("hide");
       openedPackContainer.innerHTML = "";
-      packStoreContainer.classList.remove("hide");
       pack = [];
       count = 0;
     });
@@ -261,4 +257,5 @@ function buyCoins(amount) {
     
 
 
-//heaara
+//heaar
+console.log();

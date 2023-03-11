@@ -1,7 +1,7 @@
 const currentUserString = localStorage.getItem('current_user');
 const userCardsFromLocalStorage:any = localStorage.getItem(`${currentUserString}.cards`)
 const userCards = JSON.parse(userCardsFromLocalStorage);
-const imgArray:any = []
+const imgArray:any  = []
 
 
 const containerCard = document.querySelectorAll(".container__card")
@@ -21,5 +21,5 @@ function showCardsInAlbum(){
     
 
 }
-showCardsInAlbum()
 
+showCardsInAlbum()
