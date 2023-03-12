@@ -363,19 +363,19 @@ header{
   
   
   .albumContainer {
-    height: 69vh;
+    height: 65%;
     overflow: auto;
-    margin: 30px;
+    margin: 90px;
     border: 5px solid white;
     border-radius: 10px;
     display: grid;
-    gap: 3px;
+    gap: 10px;
     grid-template-columns: repeat(auto-fit , minmax(193px , 193px));
     align-items: center;
     justify-content: space-evenly;
 
     .container__card {
-      margin-top: 5px;
+      margin: 10px;
       align-items: center;
       max-width: 193px;
       max-height: 270px;
