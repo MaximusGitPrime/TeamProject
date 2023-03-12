@@ -157,7 +157,11 @@ TopUpBtn.addEventListener("click", function () {
         pricingTable.classList.remove("hide");
     }
     else {
-        alert("You need to send your cards to album first");
+        swal.fire({
+            title: "Error",
+            text: "You need to send your cards to album first",
+            icon: "error"
+        });
     }
 });
 goToAlbumBtn.addEventListener("click", function () {
@@ -167,7 +171,11 @@ goToAlbumBtn.addEventListener("click", function () {
         packStoreContainer.classList.add("hide");
     }
     else {
-        alert("You need to send your cards to album first");
+        swal.fire({
+            title: "Error",
+            text: "You need to send your cards to album first",
+            icon: "error"
+        });
     }
 });
 goToStoreBtn.addEventListener("click", function () {
@@ -177,6 +185,10 @@ goToStoreBtn.addEventListener("click", function () {
         pricingTable.classList.add("hide");
     }
     else {
-        alert("You need to send your cards to album first");
+        swal.fire({
+            title: "Error",
+            text: "You need to send your cards to album first",
+            icon: "error"
+        });
     }
 });

@@ -187,34 +187,46 @@ function buyCoins(amount) {
 
 
 
-      TopUpBtn.addEventListener("click", () => {
-        if(openedPackContainer.classList.contains("hide")){
-        packStoreContainer.classList.add("hide");
-        albumContainer.classList.add("hide")
-        pricingTable.classList.remove("hide");
-        }else{
-          alert("You need to send your cards to album first")
-        }
-      });
-    
-      goToAlbumBtn.addEventListener("click" , ()=>{
-        if(openedPackContainer.classList.contains("hide")){
-        albumContainer.classList.remove("hide")
-        pricingTable.classList.add("hide");
-        packStoreContainer.classList.add("hide")
-        }else{
-          alert("You need to send your cards to album first")
-        }
-      })
-    
-      goToStoreBtn.addEventListener("click" , ()=>{
-          if(openedPackContainer.classList.contains("hide")){
-            packStoreContainer.classList.remove("hide")
-            albumContainer.classList.add("hide")
-            pricingTable.classList.add("hide");
-          }else{
-            alert("You need to send your cards to album first")
-          }
-      })
+TopUpBtn.addEventListener("click", () => {
+  if(openedPackContainer.classList.contains("hide")){
+    packStoreContainer.classList.add("hide");
+    albumContainer.classList.add("hide")
+    pricingTable.classList.remove("hide");
+  } else {
+    swal.fire({
+      title: "Error",
+      text: "You need to send your cards to album first",
+      icon: "error",
+    });
+  }
+});
+
+goToAlbumBtn.addEventListener("click" , ()=>{
+  if(openedPackContainer.classList.contains("hide")){
+    albumContainer.classList.remove("hide")
+    pricingTable.classList.add("hide");
+    packStoreContainer.classList.add("hide")
+  } else {
+    swal.fire({
+      title: "Error",
+      text: "You need to send your cards to album first",
+      icon: "error",
+    });
+  }
+})
+
+goToStoreBtn.addEventListener("click" , ()=>{
+  if(openedPackContainer.classList.contains("hide")){
+    packStoreContainer.classList.remove("hide")
+    albumContainer.classList.add("hide")
+    pricingTable.classList.add("hide");
+  } else {
+    swal.fire({
+      title: "Error",
+      text: "You need to send your cards to album first",
+      icon: "error",
+    });
+  }
+})
     
   

@@ -75,7 +75,7 @@ nav .albumBtn {
   height: 100%;
   backface-visibility: hidden;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.4);
-  border-radius: 10px;
+  border-radius: none;
 }
 
 .back {
