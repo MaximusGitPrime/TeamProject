@@ -9,11 +9,14 @@ var goToAlbumBtn = document.querySelector("#goToAlbumBtn");
 var albumContainer = document.querySelector(".albumContainer");
 var TopUpBtn = document.querySelector("#TopUpBtn");
 var goToStoreBtn = document.querySelector("#goToStoreBtn");
+var soundCardsBtn = document.querySelector(".soundCardsBtn");
 var Card = /** @class */ (function () {
-    function Card(cardId, cardFace, cardType) {
+    function Card(cardId, cardFace, cardType, soundCards, cardAudioSrc) {
         this.cardId = cardId;
         this.cardFace = cardFace;
         this.cardType = cardType;
+        this.soundCards = soundCards;
+        this.cardAudioSrc = cardAudioSrc;
     }
     return Card;
 }());
@@ -48,13 +51,13 @@ var cards = [
     new Card(28, "./projectPhotos/28.PNG", "common"),
     new Card(29, "./projectPhotos/29.PNG", "common"),
     new Card(30, "./projectPhotos/30.PNG", "common"),
-    new Card(31, "./projectPhotos/specials/31.PNG", "rare"),
-    new Card(32, "./projectPhotos/specials/32.PNG", "rare"),
+    new Card(31, "./projectPhotos/specials/31.PNG", "rare", true, "./projectPhotos/audio/george.mp3"),
+    new Card(32, "./projectPhotos/specials/32.PNG", "rare", true, "./projectPhotos/audio/benet.mp3"),
     new Card(33, "./projectPhotos/specials/33.PNG", "rare"),
     new Card(34, "./projectPhotos/specials/34.PNG", "rare"),
-    new Card(35, "./projectPhotos/specials/35.PNG", "rare"),
+    new Card(35, "./projectPhotos/specials/35.PNG", "rare", true, "./projectPhotos/audio/reuven.mp3"),
     new Card(36, "./projectPhotos/specials/36.PNG", "rare"),
-    new Card(37, "./projectPhotos/specials/37.PNG", "rare"),
+    new Card(37, "./projectPhotos/specials/37.PNG", "rare", true, "./projectPhotos/audio/dediDadon.mp3"),
     new Card(38, "./projectPhotos/specials/38.PNG", "rare"),
     new Card(39, "./projectPhotos/specials/39.PNG", "rare"),
     new Card(40, "./projectPhotos/specials/40.PNG", "rare"),
@@ -66,7 +69,7 @@ var cards = [
     new Card(46, "./projectPhotos/specials/46.PNG", "rare"),
     new Card(47, "./projectPhotos/specials/47.PNG", "rare"),
     new Card(48, "./projectPhotos/specials/48.PNG", "rare"),
-    new Card(49, "./projectPhotos/specials/49.PNG", "rare"),
+    new Card(49, "./projectPhotos/specials/49.PNG", "rare", true, "./projectPhotos/audio/miri.mp3"),
     new Card(50, "./projectPhotos/specials/50.PNG", "rare"),
     new Card(51, "./projectPhotos/specials/51.PNG", "rare"),
     new Card(52, "./projectPhotos/specials/52.PNG", "rare"),

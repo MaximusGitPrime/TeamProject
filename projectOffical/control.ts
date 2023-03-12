@@ -1,29 +1,53 @@
 function displayPack(pack: Card[]) {
   let count = 0
     for (const card of pack) {
-      const cardElement = document.createElement("div");
-      cardElement.classList.add("card");
-      cardElement.innerHTML = `
-        <img class="front" src="${card.cardFace}">
-        <img class="back" src="./projectPhotos/cardBack.PNG">
-      `;
-      cardElement.addEventListener("click", () => {
-        cardElement.classList.add("flipped");
-        count++
-        console.log(count);
+      if(card.soundCards == true){
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.innerHTML = `
+          <img class="front" src="${card.cardFace}">
+          <img class="back" src="./projectPhotos/cardBack.PNG">
+        `;
+        cardElement.addEventListener("click", () => {
+          const audio = new Audio(card.cardAudioSrc)
+          audio.loop = false
+          audio.play()
+          cardElement.classList.add("flipped");
         
-        if(count ==5){
+          count++
           
-          sendToAlbumBtn.classList.remove("hide")
+          if(count ==5){
+            
+            sendToAlbumBtn.classList.remove("hide") 
+          }
           
-        }
-    
-        
-      });
+        });  
+        openedPackContainer.appendChild(cardElement);
+      }else{
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.innerHTML = `
+          <img class="front" src="${card.cardFace}">
+          <img class="back" src="./projectPhotos/cardBack.PNG">
+        `;
+        cardElement.addEventListener("click", () => {
+          cardElement.classList.add("flipped");
+          count++
+          
+          if(count ==5){
+            
+            sendToAlbumBtn.classList.remove("hide")
+            
+          }
+          
+          
+        });
+        openedPackContainer.appendChild(cardElement);
+
+      }
 
 
 
-      openedPackContainer.appendChild(cardElement);
     }
     packStoreContainer.classList.add("hide")
   }

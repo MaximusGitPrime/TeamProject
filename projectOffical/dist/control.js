@@ -1,18 +1,35 @@
 function displayPack(pack) {
     var count = 0;
     var _loop_1 = function (card) {
-        var cardElement = document.createElement("div");
-        cardElement.classList.add("card");
-        cardElement.innerHTML = "\n        <img class=\"front\" src=\"" + card.cardFace + "\">\n        <img class=\"back\" src=\"./projectPhotos/cardBack.PNG\">\n      ";
-        cardElement.addEventListener("click", function () {
-            cardElement.classList.add("flipped");
-            count++;
-            console.log(count);
-            if (count == 5) {
-                sendToAlbumBtn.classList.remove("hide");
-            }
-        });
-        openedPackContainer.appendChild(cardElement);
+        if (card.soundCards == true) {
+            var cardElement_1 = document.createElement("div");
+            cardElement_1.classList.add("card");
+            cardElement_1.innerHTML = "\n          <img class=\"front\" src=\"" + card.cardFace + "\">\n          <img class=\"back\" src=\"./projectPhotos/cardBack.PNG\">\n        ";
+            cardElement_1.addEventListener("click", function () {
+                var audio = new Audio(card.cardAudioSrc);
+                audio.loop = false;
+                audio.play();
+                cardElement_1.classList.add("flipped");
+                count++;
+                if (count == 5) {
+                    sendToAlbumBtn.classList.remove("hide");
+                }
+            });
+            openedPackContainer.appendChild(cardElement_1);
+        }
+        else {
+            var cardElement_2 = document.createElement("div");
+            cardElement_2.classList.add("card");
+            cardElement_2.innerHTML = "\n          <img class=\"front\" src=\"" + card.cardFace + "\">\n          <img class=\"back\" src=\"./projectPhotos/cardBack.PNG\">\n        ";
+            cardElement_2.addEventListener("click", function () {
+                cardElement_2.classList.add("flipped");
+                count++;
+                if (count == 5) {
+                    sendToAlbumBtn.classList.remove("hide");
+                }
+            });
+            openedPackContainer.appendChild(cardElement_2);
+        }
     };
     for (var _i = 0, pack_1 = pack; _i < pack_1.length; _i++) {
         var card = pack_1[_i];

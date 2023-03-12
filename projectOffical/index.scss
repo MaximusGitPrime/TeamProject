@@ -103,18 +103,10 @@ header{
   }
   
 
-  #logout-button{
+  #goToAlbumBtn,#logout-button,#goToStoreBtn ,#TopUpBtn{
     cursor: pointer;
   }
-  #goToStoreBtn{
-    cursor: pointer;
-  }
-  #goToAlbumBtn{
-    cursor: pointer;
-  }
-  #TopUpBtn{
-    cursor: pointer;
-  }
+  
 
 
   .hide{
@@ -393,3 +385,13 @@ header{
         height: 270px;
       }
     }}
+
+
+    .soundCardsBtn{
+      position: absolute;
+      background-color: black;
+      height: 90px;
+      width: 50px;
+      top: -50px;
+      left: 0;
+    }

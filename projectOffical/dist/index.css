@@ -90,19 +90,7 @@ nav .albumBtn {
   transform: rotateY(180deg);
 }
 
-#logout-button {
-  cursor: pointer;
-}
-
-#goToStoreBtn {
-  cursor: pointer;
-}
-
-#goToAlbumBtn {
-  cursor: pointer;
-}
-
-#TopUpBtn {
+#goToAlbumBtn, #logout-button, #goToStoreBtn, #TopUpBtn {
   cursor: pointer;
 }
 
@@ -356,4 +344,13 @@ h1:after {
   border-radius: 10px;
   width: 193px;
   height: 270px;
+}
+
+.soundCardsBtn {
+  position: absolute;
+  background-color: black;
+  height: 90px;
+  width: 50px;
+  top: -50px;
+  left: 0;
 }
