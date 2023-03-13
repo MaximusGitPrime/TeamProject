@@ -91,6 +91,10 @@ header {
   margin-top: 40%;
 }
 
+.reg-form {
+  margin-top: -6rem;
+}
+
 .tab-filter-info {
   padding: 2rem;
   text-align: center;
@@ -312,7 +316,7 @@ footer {
   color: #ffffff;
   text-align: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 15rem;
 }
 
 footer a {
