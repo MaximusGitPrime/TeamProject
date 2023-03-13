@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   padding: 0;
   margin: 0;
   min-height: 100vh;
@@ -77,6 +78,7 @@ header {
 .tab-info {
   width: 70%;
   margin: 0 auto 3rem auto;
+  margin-top: 25%;
 }
 
 @media (max-width: 767px) {
@@ -86,6 +88,7 @@ header {
 }
 .h2spe {
   color: white;
+  margin-top: 40%;
 }
 
 .tab-filter-info {
@@ -298,10 +301,8 @@ header {
   }
 }
 footer {
+  display: flex;
   flex-shrink: 0;
-}
-
-footer {
   font-family: "Montserrat", sans-serif;
   background: #240000;
   background: #5e7effa6;
@@ -310,6 +311,8 @@ footer {
   padding: 15px 5px;
   color: #ffffff;
   text-align: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 footer a {
